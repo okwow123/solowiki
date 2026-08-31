@@ -1,0 +1,296 @@
+// app/contestants/[id]/page.tsx
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { Instagram, Youtube, Music2, MapPin, Briefcase, GraduationCap, Cake, Heart, Users } from "lucide-react";
+import { getContestantById } from "@/lib/data/contestants";
+import { getPostsBySeason } from "@/lib/data/posts";
+import { PortraitPlaceholder } from "@/components/contestant/PortraitPlaceholder";
+import { StatBar, STAT_META } from "@/components/contestant/StatBar";
+import { HighlightVideo } from "@/components/contestant/HighlightVideo";
+import { PostForm } from "@/components/community/PostForm";
+import { PostCard } from "@/components/community/PostCard";
+import { currentAge, formatNumber } from "@/lib/utils";
+import { GENDER_LABELS, STATUS_LABELS } from "@/lib/types";
+
+interface PageProps {
+  params: { id: string };
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const c = await getContestantById(params.id);
+  if (!c) return { title: "출연자" };
+  return {
+    title: `${c.name}${c.season ? ` (${c.season.number}기)` : ""}`,
+    description: `${c.name} · ${c.job ?? ""} · ${c.location_city ?? ""} ${c.location_district ?? ""}`.trim(),
+  };
+}
+
+export default async function ContestantDetailPage({ params }: PageProps) {
+  const contestant = await getContestantById(params.id);
+  if (!contestant) notFound();
+
+  const age = currentAge(contestant.birth_date, contestant.age_at_appearance);
+  const [posts, allStats] = await Promise.all([
+    contestant.season ? getPostsBySeason(contestant.season.id, 20) : Promise.resolve([]),
+    Promise.resolve(
+      contestant.stats
+        ? ([
+            ["charm", contestant.stats.charm],
+            ["humor", contestant.stats.humor],
+            ["warmth", contestant.stats.warmth],
+            ["intelligence", contestant.stats.intelligence],
+            ["leadership", contestant.stats.leadership],
+            ["style", contestant.stats.style],
+          ] as [keyof typeof STAT_META, number][])
+        : []
+    ),
+  ]);
+
+  const filteredPosts = posts.filter(
+    (p) => p.contestant?.id === contestant.id || !p.contestant_id
+  );
+
+  return (
+    <section className="py-12">
+      <div className="max-w-site mx-auto px-6">
+        {/* Hero card */}
+        <div className="bg-bg-2 border border-line rounded-[14px] overflow-hidden mb-8">
+          <div className="grid md:grid-cols-[280px_1fr] gap-0">
+            <div className="p-6 md:p-8">
+              <PortraitPlaceholder
+                nameInitial={contestant.name_initial ?? contestant.name}
+                color={contestant.portrait_color}
+                size="xl"
+              />
+            </div>
+            <div className="p-6 md:p-8 md:pl-0">
+              <div className="flex flex-wrap items-center gap-2 mb-3 text-[12px] text-muted">
+                {contestant.season && (
+                  <Link
+                    href={`/seasons/${contestant.season.number}`}
+                    className="px-2.5 py-1 rounded-md bg-ink/[0.06] text-ink-soft hover:text-ink transition-colors"
+                  >
+                    {contestant.season.number}기
+                  </Link>
+                )}
+                <span className="px-2.5 py-1 rounded-md bg-ink/[0.06] text-ink-soft">
+                  {GENDER_LABELS[contestant.gender]}
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-ink/[0.06] text-ink-soft">
+                  {STATUS_LABELS[contestant.current_status]}
+                </span>
+              </div>
+
+              <h1 className="font-serif text-[clamp(32px,5vw,48px)] font-semibold leading-tight mb-3">
+                {contestant.name}
+                {age != null && (
+                  <span className="text-muted text-[18px] font-normal ml-3">
+                    · {age}세
+                  </span>
+                )}
+              </h1>
+
+              {contestant.intro && (
+                <p className="text-ink-soft text-[15px] leading-relaxed mb-5 italic">
+                  "{contestant.intro}"
+                </p>
+              )}
+
+              <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[14px]">
+                {contestant.job && (
+                  <div className="flex items-center gap-2 text-ink-soft">
+                    <Briefcase className="w-4 h-4 text-muted shrink-0" />
+                    <span>{contestant.job}</span>
+                    {contestant.job_category && (
+                      <span className="text-[11px] text-muted">({contestant.job_category})</span>
+                    )}
+                  </div>
+                )}
+                {(contestant.location_city || contestant.location_district) && (
+                  <div className="flex items-center gap-2 text-ink-soft">
+                    <MapPin className="w-4 h-4 text-muted shrink-0" />
+                    <span>
+                      {contestant.location_city} {contestant.location_district}
+                    </span>
+                  </div>
+                )}
+                {age != null && (
+                  <div className="flex items-center gap-2 text-ink-soft">
+                    <Cake className="w-4 h-4 text-muted shrink-0" />
+                    <span>출연 당시 {contestant.age_at_appearance}세 · 현재 {age}세</span>
+                  </div>
+                )}
+                {contestant.education && (
+                  <div className="flex items-center gap-2 text-ink-soft">
+                    <GraduationCap className="w-4 h-4 text-muted shrink-0" />
+                    <span>{contestant.education}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Social */}
+              <div className="flex flex-wrap gap-2 mt-5">
+                {contestant.instagram_handle && (
+                  <a
+                    href={`https://instagram.com/${contestant.instagram_handle}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-rose/10 text-accent-rose border border-accent-rose/25 text-[12.5px] hover:bg-accent-rose/20 transition-colors"
+                  >
+                    <Instagram className="w-3.5 h-3.5" />
+                    {formatNumber(contestant.instagram_followers)}
+                  </a>
+                )}
+                {contestant.youtube_handle && (
+                  <a
+                    href={`https://youtube.com/@${contestant.youtube_handle}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-rose/10 text-accent-rose border border-accent-rose/25 text-[12.5px] hover:bg-accent-rose/20 transition-colors"
+                  >
+                    <Youtube className="w-3.5 h-3.5" />
+                    YouTube
+                  </a>
+                )}
+                {contestant.tiktok_handle && (
+                  <a
+                    href={`https://tiktok.com/@${contestant.tiktok_handle}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-rose/10 text-accent-rose border border-accent-rose/25 text-[12.5px] hover:bg-accent-rose/20 transition-colors"
+                  >
+                    <Music2 className="w-3.5 h-3.5" />
+                    {formatNumber(contestant.tiktok_followers)}
+                  </a>
+                )}
+              </div>
+
+              {/* Partner link */}
+              {contestant.partner && (
+                <div className="mt-5 p-3.5 bg-bg-3 border border-line rounded-[10px]">
+                  <div className="flex items-center gap-2 text-[12px] text-muted mb-2">
+                    <Heart className="w-3.5 h-3.5 text-accent-rose" />
+                    현재 파트너
+                  </div>
+                  <Link
+                    href={`/contestants/${contestant.partner.id}`}
+                    className="flex items-center gap-3 group"
+                  >
+                    <div
+                      className="w-10 h-10 rounded-lg grid place-items-center font-serif font-semibold text-ink/90 text-sm"
+                      style={{
+                        background: `linear-gradient(135deg, var(--accent-${contestant.partner.portrait_color}))`,
+                      }}
+                    >
+                      {contestant.partner.name_initial ?? contestant.partner.name}
+                    </div>
+                    <span className="font-semibold group-hover:text-accent-rose transition-colors">
+                      {contestant.partner.name}
+                    </span>
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-[1fr_360px] gap-6">
+          {/* Main column */}
+          <div className="space-y-6">
+            {/* Game stats */}
+            {contestant.stats && (
+              <div className="bg-bg-2 border border-line rounded-[14px] p-6">
+                <h2 className="font-serif text-[22px] font-semibold mb-5 flex items-center gap-2">
+                  <span className="text-accent-rose">◆</span> 게임 스탯
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+                  {allStats.map(([key, value]) => (
+                    <StatBar key={key} stat={key} value={value} />
+                  ))}
+                </div>
+                {contestant.charm_points && contestant.charm_points.length > 0 && (
+                  <div className="mt-5 pt-5 border-t border-line">
+                    <p className="text-[12px] text-muted uppercase tracking-widest mb-2.5">
+                      매력 포인트
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {contestant.charm_points.map((p) => (
+                        <span
+                          key={p}
+                          className="text-[12.5px] px-3 py-1 rounded-full bg-ink/[0.06] text-ink-soft"
+                        >
+                          #{p}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Highlights */}
+            {contestant.highlights.length > 0 && (
+              <div>
+                <h2 className="font-serif text-[22px] font-semibold mb-4 flex items-center gap-2">
+                  <span className="text-accent-rose">▶</span> 하이라이트 영상
+                </h2>
+                <div className="grid gap-4">
+                  {contestant.highlights.map((h) => (
+                    <HighlightVideo
+                      key={h.id}
+                      youtubeId={h.youtube_id}
+                      title={h.title}
+                      description={h.description}
+                      sourceChannel={h.source_channel}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Posts about this contestant */}
+            <div>
+              <h2 className="font-serif text-[22px] font-semibold mb-4 flex items-center gap-2">
+                <Users className="w-5 h-5 text-accent-rose" />
+                팬들이 남긴 이야기
+              </h2>
+              <div className="space-y-3">
+                {filteredPosts.length === 0 ? (
+                  <p className="text-muted text-[13.5px] py-6 text-center border border-dashed border-line rounded-[14px]">
+                    아직 이 출연자에 대한 글이 없어요. 첫 글을 남겨보세요!
+                  </p>
+                ) : (
+                  filteredPosts.slice(0, 5).map((p) => (
+                    <PostCard
+                      key={p.id}
+                      post={p}
+                      href={`/community/${p.season?.number ?? 1}#post-${p.id}`}
+                      compact
+                    />
+                  ))
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar — community post form */}
+          <aside className="space-y-4">
+            {contestant.season && (
+              <PostForm
+                seasonId={contestant.season.id}
+                seasonNumber={contestant.season.number}
+                contestantId={contestant.id}
+              />
+            )}
+            <Link
+              href={`/community/${contestant.season?.number ?? 1}`}
+              className="block text-center px-4 py-3 border border-line-strong text-ink-soft text-[13px] rounded-full hover:bg-bg-3 transition-colors"
+            >
+              {contestant.season?.number ?? 1}기 전체 커뮤니티 →
+            </Link>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
+}

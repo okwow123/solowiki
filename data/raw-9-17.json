@@ -1,0 +1,182 @@
+{
+  "seasons": [
+    {
+      "season_number": 9, "title": "9기 (돌싱)",
+      "air_date_start": "2022-06-29", "air_date_end": "2022-08-17", "episode_count": 8,
+      "location_filming": "전라북도 무주군",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1981,"age_at_appearance":42,"job":"바클레이즈 은행 선물옵션 아시아/태평양 헤드","job_category":"금융","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":"lingeringaffection"},
+        {"gamyeong":"영호","gender":"male","birth_year":1994,"age_at_appearance":29,"job":"제약 지주사 IR 담당","job_category":"금융","location_city":"성남","current_status":"single","partner_gamyeong":null,"instagram_handle":"this_mean_young"},
+        {"gamyeong":"영식","gender":"male","birth_year":1989,"age_at_appearance":34,"job":"프로 경륜 선수","job_category":"스포츠","location_city":"전주","current_status":"single","partner_gamyeong":null,"instagram_handle":"led_ttt"},
+        {"gamyeong":"영철","gender":"male","birth_year":1986,"age_at_appearance":37,"job":"한화글로벌 법무팀(9년차)","job_category":"법무/기업","location_city":"부산","current_status":"single","partner_gamyeong":null,"instagram_handle":"kyle612_"},
+        {"gamyeong":"광수","gender":"male","birth_year":1985,"age_at_appearance":38,"job":"정신과 전문의(페이닥터)","job_category":"의료","location_city":"성남 판교","current_status":"married","partner_gamyeong":null,"instagram_handle":"tlgus6006"},
+        {"gamyeong":"상철","gender":"male","birth_year":1987,"age_at_appearance":36,"job":"사업가(통신/IT/엔터/에너지, 매출 300억)","job_category":"사업","location_city":"논현동","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영숙","gender":"female","birth_year":1994,"age_at_appearance":29,"job":"서울 지역 농협 은행원","job_category":"금융","location_city":"서울 송파구","current_status":"married","partner_gamyeong":null,"instagram_handle":"gahee_c"},
+        {"gamyeong":"정숙","gender":"female","birth_year":1987,"age_at_appearance":36,"job":"프리랜서 첼리스트","job_category":"예술","location_city":"경기 여주","current_status":"single","partner_gamyeong":null,"instagram_handle":"cello.jihye"},
+        {"gamyeong":"순자","gender":"female","birth_year":1997,"age_at_appearance":26,"job":"현직 무용수(한국예술종합대 무용과)","job_category":"예술","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":"youbemyself"},
+        {"gamyeong":"영자","gender":"female","birth_year":1993,"age_at_appearance":30,"job":"삼성전자 투자기획(10년차)","job_category":"기업","location_city":"경기 오산","current_status":"single","partner_gamyeong":null,"instagram_handle":"jh_____youn"},
+        {"gamyeong":"옥순","gender":"female","birth_year":1986,"age_at_appearance":37,"job":"외국계 퍼블리시스 P그룹 AE","job_category":"광고","location_city":"서울 강동구","current_status":"single","partner_gamyeong":null,"instagram_handle":"joy15th"},
+        {"gamyeong":"현숙","gender":"female","birth_year":1992,"age_at_appearance":31,"job":"글로벌 IT 기업 인사이드 세일즈 매니저","job_category":"IT/세일즈","location_city":"인천 계양구","current_status":"single","partner_gamyeong":null,"instagram_handle":null}
+      ]
+    },
+    {
+      "season_number": 10, "title": "10기 (돌싱)",
+      "air_date_start": "2022-08-24", "air_date_end": "2022-10-12", "episode_count": 8,
+      "location_filming": "경상북도 경주시",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1977,"age_at_appearance":46,"job":"한국기업인증원 ISO 국제 심사원","job_category":"전문직","location_city":"경기도","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영호","gender":"male","birth_year":1986,"age_at_appearance":38,"job":"HD현대중공업 사내 변호사(서울대)","job_category":"법무","location_city":"울산","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영식","gender":"male","birth_year":1989,"age_at_appearance":37,"job":"외국계 기업 세일즈맨","job_category":"세일즈","location_city":"수원","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영철","gender":"male","birth_year":1987,"age_at_appearance":36,"job":"농협 대출 업무(10년차)","job_category":"금융","location_city":"충남","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"광수","gender":"male","birth_year":1981,"age_at_appearance":41,"job":"삼성화재 본사 직원(공인회계사)","job_category":"금융/보험","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"상철","gender":"male","birth_year":1977,"age_at_appearance":46,"job":"미국 한국 주류 도매업(콜로라도)","job_category":"사업","location_city":"미국 콜로라도","current_status":"married","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영숙","gender":"female","birth_year":1983,"age_at_appearance":40,"job":"행정 6급 공무원(17년차, 경남 창원)","job_category":"공공","location_city":"경남 창원","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"정숙","gender":"female","birth_year":1978,"age_at_appearance":45,"job":"곱창집 운영/부동산 경매/미용사(대구 아파트 4채)","job_category":"사업","location_city":"대구","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"순자","gender":"female","birth_year":1986,"age_at_appearance":40,"job":"서울시 행정 6급 공무원","job_category":"공공","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영자","gender":"female","birth_year":1994,"age_at_appearance":32,"job":"헤어 디자이너(10년차)","job_category":"서비스","location_city":"안산","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"옥순","gender":"female","birth_year":1989,"age_at_appearance":34,"job":"현대모비스 생산직","job_category":"제조","location_city":"충북 청주","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"현숙","gender":"female","birth_year":1992,"age_at_appearance":31,"job":"발레 강사/댄스 강사/K팝 댄스 강사","job_category":"예술/교육","location_city":"부산","current_status":"single","partner_gamyeong":null,"instagram_handle":null}
+      ]
+    },
+    {
+      "season_number": 11, "title": "11기",
+      "air_date_start": "2022-11-02", "air_date_end": "2022-12-28", "episode_count": 8,
+      "location_filming": "경기도 동두천시",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1986,"age_at_appearance":37,"job":"대학병원 외과 전문의","job_category":"의료","location_city":"경기 의정부","current_status":"single","partner_gamyeong":null,"instagram_handle":"yongyong257"},
+        {"gamyeong":"영호","gender":"male","birth_year":1989,"age_at_appearance":34,"job":"치과의사(바둑 5단)","job_category":"의료","location_city":"수원 광교","current_status":"single","partner_gamyeong":null,"instagram_handle":"yonani7"},
+        {"gamyeong":"영식","gender":"male","birth_year":1985,"age_at_appearance":38,"job":"외국계 필름 기업 세일즈 매니저(멘사)","job_category":"세일즈","location_city":"강남","current_status":"single","partner_gamyeong":null,"instagram_handle":"stuart_seungkyu"},
+        {"gamyeong":"영철","gender":"male","birth_year":1988,"age_at_appearance":35,"job":"부산은행 은행원(8년차)","job_category":"금융","location_city":"부산","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"광수","gender":"male","birth_year":1984,"age_at_appearance":39,"job":"기업 채용 컨설팅 사업 CEO(베스트셀러 작가)","job_category":"사업","location_city":"서울 서초","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"상철","gender":"male","birth_year":1990,"age_at_appearance":33,"job":"메이저리그 스카우터(애리조나 다이아몬드백스)","job_category":"스포츠","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영숙","gender":"female","birth_year":1988,"age_at_appearance":35,"job":"주방기기 매매/식당 철거 사업","job_category":"사업","location_city":"부산","current_status":"single","partner_gamyeong":null,"instagram_handle":"92ddffhhxx"},
+        {"gamyeong":"정숙","gender":"female","birth_year":1986,"age_at_appearance":37,"job":"변리사(8년차, 산업재산권/특허)","job_category":"법무","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":"jihye_wisdom8"},
+        {"gamyeong":"순자","gender":"female","birth_year":1995,"age_at_appearance":28,"job":"재활 피트니스 강사(성악 전공)","job_category":"교육/피트니스","location_city":"서울 서초","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영자","gender":"female","birth_year":1990,"age_at_appearance":33,"job":"금융사 IT 기획 담당(컴퓨터공학 8년)","job_category":"IT/금융","location_city":"서울 서초","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"옥순","gender":"female","birth_year":1986,"age_at_appearance":37,"job":"학원 수학 강사(서울대 독어독문학)","job_category":"교육","location_city":"충북 청주","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"현숙","gender":"female","birth_year":1988,"age_at_appearance":35,"job":"휠라 소싱팀 과장(10년차)","job_category":"패션/무역","location_city":"서울 동작구","current_status":"single","partner_gamyeong":null,"instagram_handle":null}
+      ]
+    },
+    {
+      "season_number": 12, "title": "12기 (모태솔로)",
+      "air_date_start": "2022-12-21", "air_date_end": "2023-02-15", "episode_count": 8,
+      "location_filming": "경기도 여주시",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1985,"age_at_appearance":37,"job":"수학 강사(창원 미래탐구학원)","job_category":"교육","location_city":"서울 양천","current_status":"single","partner_gamyeong":null,"instagram_handle":"djenfbjshe"},
+        {"gamyeong":"영호","gender":"male","birth_year":1994,"age_at_appearance":29,"job":"삼성전자 반도체 소자 개발 연구원","job_category":"IT/연구","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":"zzinoo_life"},
+        {"gamyeong":"영식","gender":"male","birth_year":1992,"age_at_appearance":30,"job":"원주 문화재단 공연/축제 기획(홍익대 공연예술)","job_category":"문화/기획","location_city":"강원 원주","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영철","gender":"male","birth_year":1985,"age_at_appearance":37,"job":"프로레슬러(LOTW 챔피언, 올 아시아 헤비급)","job_category":"스포츠","location_city":"경기 일산","current_status":"single","partner_gamyeong":null,"instagram_handle":"hobbymonz"},
+        {"gamyeong":"광수","gender":"male","birth_year":1990,"age_at_appearance":32,"job":"변리사(포항공대 수학)","job_category":"법무","location_city":"서울 강남","current_status":"single","partner_gamyeong":null,"instagram_handle":"besunnysunny"},
+        {"gamyeong":"상철","gender":"male","birth_year":1987,"age_at_appearance":35,"job":"IT 개발자(건설 측량 스타트업, 중앙대 석사)","job_category":"IT","location_city":"인천","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영숙","gender":"female","birth_year":1993,"age_at_appearance":29,"job":"전남도자기공예 국비지원 훈련센터 운영","job_category":"공예/교육","location_city":"전남","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"정숙","gender":"female","birth_year":1988,"age_at_appearance":34,"job":"호텔 마케팅팀 웹디자이너","job_category":"디자인/마케팅","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"순자","gender":"female","birth_year":1994,"age_at_appearance":28,"job":"국가보훈처 산하기관 골프장 근무","job_category":"공공/서비스","location_city":"경기 용인","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영자","gender":"female","birth_year":1991,"age_at_appearance":31,"job":"애니메이션 OTT 콘텐츠 연출가","job_category":"애니메이션/연출","location_city":"판교","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"옥순","gender":"female","birth_year":1994,"age_at_appearance":28,"job":"교사 임용고시 준비(전 국가정책연구원)","job_category":"교육","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"현숙","gender":"female","birth_year":1991,"age_at_appearance":31,"job":"프리랜서(뮤지컬 배우, 노래 강사, 피아노 강사)","job_category":"예술","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":"testum_"}
+      ]
+    },
+    {
+      "season_number": 13, "title": "13기",
+      "air_date_start": "2023-02-15", "air_date_end": "2023-04-05", "episode_count": 8,
+      "location_filming": "충청북도 청주시",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1985,"age_at_appearance":37,"job":"성형외과 일반의(부산 페이닥터)","job_category":"의료","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영호","gender":"male","birth_year":1986,"age_at_appearance":36,"job":"한국수출입은행 자원금융 부서(서강대)","job_category":"금융/공공","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영식","gender":"male","birth_year":1987,"age_at_appearance":35,"job":"역도 지도자(전 국가대표/봇슬레이 코치)","job_category":"스포츠","location_city":"부산","current_status":"single","partner_gamyeong":null,"instagram_handle":"dualh1120"},
+        {"gamyeong":"영철","gender":"male","birth_year":1993,"age_at_appearance":29,"job":"난초 수출입업/농장 운영(연세대 체육교육)","job_category":"농업/교육","location_city":"충북 청주","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"광수","gender":"male","birth_year":1989,"age_at_appearance":33,"job":"삼성전자 휴대폰 사업부 SW 개발자(연세대 원주)","job_category":"IT/개발","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":"barosl"},
+        {"gamyeong":"상철","gender":"male","birth_year":1989,"age_at_appearance":33,"job":"한의사(광진경희한의원, 원광대 한의대)","job_category":"의료","location_city":"서울 광진구","current_status":"single","partner_gamyeong":null,"instagram_handle":"ninezero.kwon"},
+        {"gamyeong":"영숙","gender":"female","birth_year":1990,"age_at_appearance":32,"job":"약사(부산 약국 운영, 인제대 약대)","job_category":"의료","location_city":"부산","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"정숙","gender":"female","birth_year":1991,"age_at_appearance":31,"job":"오르가니스트 겸 대학교수(연세대 음대, 독일 유학)","job_category":"음악/교육","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"순자","gender":"female","birth_year":1988,"age_at_appearance":34,"job":"AWS 클라우드 엔지니어(숭실대)","job_category":"IT","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영자","gender":"female","birth_year":1990,"age_at_appearance":32,"job":"두산밥캣 파이낸스 택스 팀장(서울시립대)","job_category":"금융","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"옥순","gender":"female","birth_year":1990,"age_at_appearance":32,"job":"하이에어 사무장(전 대한항공 승무원)","job_category":"서비스/항공","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"현숙","gender":"female","birth_year":1994,"age_at_appearance":28,"job":"롯데백화점 마케팅(경희대 전자공학)","job_category":"마케팅","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null}
+      ]
+    },
+    {
+      "season_number": 14, "title": "14기 (골드미스·미스터)",
+      "air_date_start": "2023-04-12", "air_date_end": "2023-05-31", "episode_count": 8,
+      "location_filming": "강원도 평창군",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1981,"age_at_appearance":42,"job":"금융공기업(주택도시보증공사, 고려대)","job_category":"금융/공공","location_city":"서울 영등포","current_status":"single","partner_gamyeong":null,"instagram_handle":"snew_kim"},
+        {"gamyeong":"영호","gender":"male","birth_year":1981,"age_at_appearance":42,"job":"서울시 공무원(동대문구청)","job_category":"공공","location_city":"서울 동대문","current_status":"single","partner_gamyeong":null,"instagram_handle":"hyunwook21"},
+        {"gamyeong":"영식","gender":"male","birth_year":1983,"age_at_appearance":40,"job":"알루미늄 제조업 사장(아버지 사업 승계 15년)","job_category":"제조/사업","location_city":"인천 구월동","current_status":"single","partner_gamyeong":null,"instagram_handle":"qotnsqh"},
+        {"gamyeong":"영철","gender":"male","birth_year":1984,"age_at_appearance":39,"job":"성악가 출신 호텔 CEO(이탈리아 베르디 국립음대 수석)","job_category":"음악/숙박","location_city":"경남 통영","current_status":"single","partner_gamyeong":null,"instagram_handle":"marco_k181"},
+        {"gamyeong":"광수","gender":"male","birth_year":1982,"age_at_appearance":41,"job":"공인노무사 9년차(前 경찰공무원/해군 장교)","job_category":"법무","location_city":"서울 영등포","current_status":"single","partner_gamyeong":null,"instagram_handle":"mangdo___"},
+        {"gamyeong":"상철","gender":"male","birth_year":1984,"age_at_appearance":39,"job":"현대자동차 영업(11년차)","job_category":"영업/제조","location_city":"서울 성수동","current_status":"single","partner_gamyeong":null,"instagram_handle":"hohoojh"},
+        {"gamyeong":"경수","gender":"male","birth_year":1981,"age_at_appearance":42,"job":"민경수 야구연구소 원장(전 LG트윈스 10년)","job_category":"스포츠","location_city":"서울 사당동","current_status":"single","partner_gamyeong":null,"instagram_handle":"minkyungsoo"},
+        {"gamyeong":"영숙","gender":"female","birth_year":1983,"age_at_appearance":40,"job":"미국계 IT 장비 회사 세일즈 매니저","job_category":"IT/세일즈","location_city":"서울 영등포","current_status":"single","partner_gamyeong":null,"instagram_handle":"nanazip_"},
+        {"gamyeong":"정숙","gender":"female","birth_year":1980,"age_at_appearance":43,"job":"해커스 어학원 TOEFL 1위 강사","job_category":"교육","location_city":"경기 김포","current_status":"single","partner_gamyeong":null,"instagram_handle":"katri_na1102"},
+        {"gamyeong":"순자","gender":"female","birth_year":1984,"age_at_appearance":39,"job":"바이오테크 & 코스메틱 회사 CEO","job_category":"사업/뷰티","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":"jyp0224"},
+        {"gamyeong":"영자","gender":"female","birth_year":1984,"age_at_appearance":39,"job":"현대중공업 비서","job_category":"사무/관리","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":"graceimsu"},
+        {"gamyeong":"옥순","gender":"female","birth_year":1986,"age_at_appearance":37,"job":"한국어 강사(이대 교육대학원, 전 카타르 항공사)","job_category":"교육/항공","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"현숙","gender":"female","birth_year":1983,"age_at_appearance":40,"job":"독일 제약회사 세일즈팀","job_category":"제약/세일즈","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null}
+      ]
+    },
+    {
+      "season_number": 15, "title": "15기",
+      "air_date_start": "2023-06-07", "air_date_end": "2023-07-19", "episode_count": 8,
+      "location_filming": "제주특별자치도",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1985,"age_at_appearance":39,"job":"공인회계사(삼일회계법인, 고려대 경영)","job_category":"전문직","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":"85_is_true"},
+        {"gamyeong":"영호","gender":"male","birth_year":1992,"age_at_appearance":32,"job":"NICE신용평가 무역 컨설턴트(부산외대)","job_category":"금융/컨설팅","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영식","gender":"male","birth_year":1989,"age_at_appearance":35,"job":"삼성전자 반도체 설계 11년차(특전사 출신)","job_category":"IT/엔지니어","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영철","gender":"male","birth_year":1986,"age_at_appearance":38,"job":"현대건설 구매사업부 구매 담당","job_category":"건설/구매","location_city":"서울 영등포","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"광수","gender":"male","birth_year":1989,"age_at_appearance":35,"job":"변호사(송백 법률사무소, 연세대 간호→서강대 로)","job_category":"법무","location_city":"수원","current_status":"married","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"상철","gender":"male","birth_year":1992,"age_at_appearance":32,"job":"AI 연구원(LG화학, 고려대 통계학)","job_category":"IT/연구","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영숙","gender":"female","birth_year":1992,"age_at_appearance":32,"job":"한화솔루션 연구소 연구기획(경북대/연세대)","job_category":"에너지/연구","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"정숙","gender":"female","birth_year":1990,"age_at_appearance":34,"job":"M&A/투자유치 어드바이저(와세다대, 일본 6년)","job_category":"금융/M&A","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"순자","gender":"female","birth_year":1992,"age_at_appearance":32,"job":"일진글로벌 경영기획팀","job_category":"제조/관리","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영자","gender":"female","birth_year":1991,"age_at_appearance":33,"job":"대치동 학원 영어강사(성균관대 영문/경영)","job_category":"교육","location_city":"대치동","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"옥순","gender":"female","birth_year":1992,"age_at_appearance":32,"job":"천안 라라발레 무용학원 원장(중앙대 무용, 200명 규모)","job_category":"예술/교육","location_city":"천안","current_status":"married","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"현숙","gender":"female","birth_year":1991,"age_at_appearance":33,"job":"두산건설 건축사","job_category":"건설/건축","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null}
+      ]
+    },
+    {
+      "season_number": 16, "title": "16기 (돌싱)",
+      "air_date_start": "2023-07-26", "air_date_end": "2023-10-04", "episode_count": 8,
+      "location_filming": "경상북도 안동시 (도산서원)",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1983,"age_at_appearance":40,"job":"헬스트레이너/인플루언서(자녀 3)","job_category":"피트니스","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":"henney_master"},
+        {"gamyeong":"영호","gender":"male","birth_year":1987,"age_at_appearance":35,"job":"삼성전자 디스플레이 엔지니어(10년차, 사내커플 이혼)","job_category":"IT/엔지니어","location_city":"천안","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영식","gender":"male","birth_year":1983,"age_at_appearance":40,"job":"LG에너지솔루션 엔지니어(자녀 2 양육)","job_category":"에너지/엔지니어","location_city":"충북 청주","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영철","gender":"male","birth_year":1983,"age_at_appearance":40,"job":"환경부 산하기관 기초설비 공사 감독(자녀 2)","job_category":"공공/건설","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":"6.24sm"},
+        {"gamyeong":"광수","gender":"male","birth_year":1982,"age_at_appearance":41,"job":"아이디어 제품 제조 스타트업 대표(전 LG전자 MC 5년)","job_category":"IT/사업","location_city":"양평","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"상철","gender":"male","birth_year":1982,"age_at_appearance":41,"job":"보잉(Boeing) 공급망 분석가(시애틀 9년)","job_category":"항공/엔지니어","location_city":"미국 시애틀","current_status":"single","partner_gamyeong":null,"instagram_handle":"sapsaree_kang"},
+        {"gamyeong":"영숙","gender":"female","birth_year":1990,"age_at_appearance":32,"job":"중고등부 무용 강사(대구 한국문화예술원, 발레전공, 자녀 1)","job_category":"예술/교육","location_city":"대구","current_status":"single","partner_gamyeong":null,"instagram_handle":"yoondongja"},
+        {"gamyeong":"정숙","gender":"female","birth_year":1986,"age_at_appearance":37,"job":"에너지 공기업 국내사업부 과장(대구 가스공사, 31세 결혼 32세 이혼)","job_category":"공공/에너지","location_city":"대구","current_status":"single","partner_gamyeong":null,"instagram_handle":"_gaeng_e"},
+        {"gamyeong":"순자","gender":"female","birth_year":1994,"age_at_appearance":29,"job":"인테리어 회사 운영(자녀 1녀, 3개월 전 이혼)","job_category":"인테리어/사업","location_city":"울산","current_status":"single","partner_gamyeong":null,"instagram_handle":"elizabeth0912i"},
+        {"gamyeong":"영자","gender":"female","birth_year":1992,"age_at_appearance":31,"job":"삼성전자 환경안전보건(자녀 1, 4년 전 이혼)","job_category":"기업/안전","location_city":"화성","current_status":"single","partner_gamyeong":null,"instagram_handle":"sowonwish0701"},
+        {"gamyeong":"옥순","gender":"female","birth_year":1988,"age_at_appearance":35,"job":"서양화가(포르쉐 박스터 911, 28세 최연소 교수)","job_category":"예술","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"현숙","gender":"female","birth_year":1990,"age_at_appearance":33,"job":"대학병원 방사선사(전북대병원, 21세 출산 24세 이혼, 14세 딸)","job_category":"의료","location_city":"전주","current_status":"single","partner_gamyeong":null,"instagram_handle":"auddu_omy"}
+      ]
+    },
+    {
+      "season_number": 17, "title": "17기",
+      "air_date_start": "2023-10-11", "air_date_end": "2023-12-06", "episode_count": 9,
+      "location_filming": "경상남도 거창군",
+      "contestants": [
+        {"gamyeong":"영수","gender":"male","birth_year":1985,"age_at_appearance":38,"job":"삼성전자 반도체 개발 연구원(연세대/서울대 석사)","job_category":"IT/연구","location_city":"화성 동탄","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영호","gender":"male","birth_year":1991,"age_at_appearance":32,"job":"정신과 전공의(도립병원 당직의, 홀덤 프로 선발전)","job_category":"의료","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영식","gender":"male","birth_year":1990,"age_at_appearance":33,"job":"금융권 외환 중개인(캐나다 국적, 187cm)","job_category":"금융","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영철","gender":"male","birth_year":1987,"age_at_appearance":36,"job":"장외 파생상품 외환채권 트레이더(연세대, 유안타증권)","job_category":"금융/증권","location_city":"서울 성북구","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"광수","gender":"male","birth_year":1983,"age_at_appearance":40,"job":"외과 의사진료(대학병원 외과 촉탁의, 전남대병원)","job_category":"의료","location_city":"광주","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"상철","gender":"male","birth_year":1988,"age_at_appearance":35,"job":"광고회사 기획/운영(라운지바 운영 경력)","job_category":"광고","location_city":null,"current_status":"married","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영숙","gender":"female","birth_year":1992,"age_at_appearance":31,"job":"고려대 박사 과정/연구 교수(암 치료법 연구)","job_category":"연구/의료","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"정숙","gender":"female","birth_year":1990,"age_at_appearance":33,"job":"LG전자 상품기획팀(태국 10년, 왕립국제학교)","job_category":"기업/기획","location_city":null,"current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"영자","gender":"female","birth_year":1994,"age_at_appearance":29,"job":"연구 간호사(대형병원, 유일 20대)","job_category":"의료","location_city":"서울","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"옥순","gender":"female","birth_year":1990,"age_at_appearance":33,"job":"흑염소 목장 운영(세종시, 전 토익강사, 연세대)","job_category":"농업/교육","location_city":"세종","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"순자","gender":"female","birth_year":1993,"age_at_appearance":30,"job":"마케터(프랑스 파리 8년, 패션 공부)","job_category":"마케팅","location_city":"수원","current_status":"single","partner_gamyeong":null,"instagram_handle":null},
+        {"gamyeong":"현숙","gender":"female","birth_year":1988,"age_at_appearance":35,"job":"공인회계사(6년차, 30세 합격, 댄스 동아리)","job_category":"전문직","location_city":null,"current_status":"married","partner_gamyeong":null,"instagram_handle":null}
+      ]
+    }
+  ],
+  "couples": [
+    {"m": {"s":9,"g":"광수"}, "f": {"s":9,"g":"영숙"}, "type": "married", "date": "2023-10-15"},
+    {"m": {"s":10,"g":"상철"}, "f": {"s":22,"g":"정숙"}, "type": "cross_season_married", "date": "2025-05-07"},
+    {"m": {"s":15,"g":"광수"}, "f": {"s":15,"g":"옥순"}, "type": "married", "date": "2024-01-14"},
+    {"m": {"s":17,"g":"상철"}, "f": {"s":17,"g":"현숙"}, "type": "married", "date": "2024-08-24"}
+  ]
+}
