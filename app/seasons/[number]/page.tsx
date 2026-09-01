@@ -5,6 +5,7 @@ import { MessageCircle, Filter, Heart } from "lucide-react";
 import { getSeasonByNumber } from "@/lib/data/seasons";
 import { getContestantsBySeason } from "@/lib/data/contestants";
 import { ContestantCard } from "@/components/contestant/ContestantCard";
+import { YouTubeThumbnail } from "@/components/contestant/YouTubeThumbnail";
 import { cn } from "@/lib/utils";
 
 interface PageProps {
@@ -150,15 +151,21 @@ export default async function SeasonDetailPage({ params }: PageProps) {
                   href={`/contestants/${m.id}`}
                   className="flex items-center gap-3 p-3 bg-bg-2 border border-line rounded-[12px] hover:border-accent-rose/40 transition-colors group"
                 >
-                  <div className="flex -space-x-2">
-                    <div className="w-9 h-9 rounded-full grid place-items-center font-serif text-[12px] font-semibold text-white ring-2 ring-bg-2"
-                      style={{ background: `linear-gradient(135deg, #4b5a8a, #1d2548)` }}>
-                      {m.name_initial ?? m.name}
-                    </div>
-                    <div className="w-9 h-9 rounded-full grid place-items-center font-serif text-[12px] font-semibold text-white ring-2 ring-bg-2"
-                      style={{ background: `linear-gradient(135deg, #d96b7c, #6e2c39)` }}>
-                      {f.name_initial ?? f.name}
-                    </div>
+                  <div className="flex -space-x-2 shrink-0">
+                    <YouTubeThumbnail
+                      youtubeId={m.highlights?.[0]?.youtube_id ?? null}
+                      nameInitial={m.name_initial ?? m.name}
+                      color={m.portrait_color}
+                      size="sm"
+                      className="!w-9 !h-9 !rounded-full ring-2 ring-bg-2"
+                    />
+                    <YouTubeThumbnail
+                      youtubeId={f.highlights?.[0]?.youtube_id ?? null}
+                      nameInitial={f.name_initial ?? f.name}
+                      color={f.portrait_color}
+                      size="sm"
+                      className="!w-9 !h-9 !rounded-full ring-2 ring-bg-2"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[14px] font-semibold group-hover:text-accent-rose transition-colors">

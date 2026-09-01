@@ -8,6 +8,7 @@ import { getRecentNews } from "@/lib/data/contestants";
 import { SeasonGrid } from "@/components/season/SeasonGrid";
 import { ContestantCard } from "@/components/contestant/ContestantCard";
 import { PostCard } from "@/components/community/PostCard";
+import { YouTubeThumbnail } from "@/components/contestant/YouTubeThumbnail";
 
 export default async function HomePage() {
   const [seasons, countMap, featured, recentPosts, recentNews] = await Promise.all([
@@ -129,32 +130,29 @@ export default async function HomePage() {
                 <Link
                   key={c.id}
                   href={`/contestants/${c.id}`}
-                  className="block bg-bg-2 border border-line rounded-[14px] p-5 hover:border-accent-rose/40 hover:-translate-y-0.5 transition-all"
+                  className="block bg-bg-2 border border-line rounded-[14px] overflow-hidden hover:border-accent-rose/40 hover:-translate-y-0.5 transition-all"
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div
-                      className="w-10 h-10 rounded-lg grid place-items-center font-serif text-[14px] font-semibold text-white shrink-0"
-                      style={{ background: `linear-gradient(135deg, var(--accent-${c.portrait_color}))` }}
-                    >
-                      {c.name_initial ?? c.name}
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-[15px] font-semibold">
-                        {c.name}
-                        {c.season && (
-                          <span className="text-muted text-[12px] font-normal ml-1.5">{c.season.number}기</span>
-                        )}
-                      </p>
-                      <p className="text-[12px] text-muted">
-                        {c.job ?? "—"}
-                      </p>
-                    </div>
-                  </div>
-                  {c.recent_news && (
-                    <p className="text-[13px] text-ink-soft leading-relaxed line-clamp-3">
-                      {c.recent_news}
+                  <YouTubeThumbnail
+                    youtubeId={c.highlights?.[0]?.youtube_id ?? null}
+                    nameInitial={c.name_initial ?? c.name}
+                    color={c.portrait_color}
+                    status={c.current_status}
+                    size="md"
+                  />
+                  <div className="p-5 pt-3">
+                    <p className="text-[15px] font-semibold mb-1">
+                      {c.name}
+                      {c.season && (
+                        <span className="text-muted text-[12px] font-normal ml-1.5">{c.season.number}기</span>
+                      )}
                     </p>
-                  )}
+                    <p className="text-[12px] text-muted mb-3">{c.job ?? "—"}</p>
+                    {c.recent_news && (
+                      <p className="text-[13px] text-ink-soft leading-relaxed line-clamp-3">
+                        {c.recent_news}
+                      </p>
+                    )}
+                  </div>
                 </Link>
               ))}
             </div>

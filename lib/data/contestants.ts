@@ -112,11 +112,27 @@ export async function getFeaturedContestants(limit = 8): Promise<ContestantWithS
 
   if (error || !data) return [];
 
+  const ids = data.map((c) => c.id);
+  // First highlight per contestant (for thumbnail)
+  const highlightsMap = new Map<string, Highlight[]>();
+  if (ids.length > 0) {
+    const { data: highlights } = await supabase
+      .from("highlights")
+      .select("*")
+      .in("contestant_id", ids)
+      .order("sort_order", { ascending: true });
+    for (const h of highlights ?? []) {
+      const list = highlightsMap.get(h.contestant_id) ?? [];
+      list.push(h as Highlight);
+      highlightsMap.set(h.contestant_id, list);
+    }
+  }
+
   return (data as any[]).map((row) => ({
     ...(row as Contestant),
     stats: (row.contestant_stats as ContestantStat) ?? null,
     season: (row.season as Season) ?? null,
-    highlights: [],
+    highlights: highlightsMap.get(row.id) ?? [],
     partner: null,
   }));
 }
@@ -134,11 +150,26 @@ export async function getRecentNews(limit = 6): Promise<ContestantWithStats[]> {
 
   if (error || !data) return [];
 
+  const ids = data.map((c) => c.id);
+  const highlightsMap = new Map<string, Highlight[]>();
+  if (ids.length > 0) {
+    const { data: highlights } = await supabase
+      .from("highlights")
+      .select("*")
+      .in("contestant_id", ids)
+      .order("sort_order", { ascending: true });
+    for (const h of highlights ?? []) {
+      const list = highlightsMap.get(h.contestant_id) ?? [];
+      list.push(h as Highlight);
+      highlightsMap.set(h.contestant_id, list);
+    }
+  }
+
   return (data as any[]).map((row) => ({
     ...(row as Contestant),
     stats: null,
     season: (row.season as Season) ?? null,
-    highlights: [],
+    highlights: highlightsMap.get(row.id) ?? [],
     partner: null,
   }));
 }

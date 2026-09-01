@@ -1,6 +1,6 @@
 // components/contestant/ContestantCard.tsx
 import Link from "next/link";
-import { PortraitPlaceholder } from "./PortraitPlaceholder";
+import { YouTubeThumbnail } from "./YouTubeThumbnail";
 import { StatBar } from "./StatBar";
 import type { ContestantWithStats } from "@/lib/types";
 import { currentAge, formatNumber } from "@/lib/utils";
@@ -28,21 +28,26 @@ export function ContestantCard({ contestant }: ContestantCardProps) {
     season,
     catchphrase,
     is_final_couple,
+    highlights,
   } = contestant;
 
   const age = currentAge(contestant.birth_date, age_at_appearance);
   // 짧은 유행어 (40자 제한, 너무 길면 잘라 ...)
   const shortCatch = catchphrase && catchphrase.length > 40 ? catchphrase.slice(0, 40) + "…" : catchphrase;
+  // 첫 번째 highlight의 youtube_id (썸네일용)
+  const firstHighlightId = highlights?.[0]?.youtube_id ?? null;
 
   return (
     <Link
       href={`/contestants/${id}`}
       className="group block bg-bg-3 border border-line rounded-[14px] overflow-hidden hover:border-line-strong hover:-translate-y-0.5 transition-all"
     >
-      <PortraitPlaceholder
+      <YouTubeThumbnail
+        youtubeId={firstHighlightId}
         nameInitial={name_initial ?? name}
         color={portrait_color}
         status={current_status}
+        size="md"
       />
 
       <div className="p-4">

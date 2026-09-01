@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Instagram, Youtube, Music2, MapPin, Briefcase, GraduationCap, Cake, Heart, Users, Quote, Sparkles, Ruler, Activity, HeartHandshake, Newspaper } from "lucide-react";
 import { getContestantById } from "@/lib/data/contestants";
 import { getPostsBySeason } from "@/lib/data/posts";
-import { PortraitPlaceholder } from "@/components/contestant/PortraitPlaceholder";
+import { YouTubeThumbnail } from "@/components/contestant/YouTubeThumbnail";
 import { StatBar, STAT_META } from "@/components/contestant/StatBar";
 import { HighlightVideo } from "@/components/contestant/HighlightVideo";
 import { PostForm } from "@/components/community/PostForm";
@@ -57,10 +57,17 @@ export default async function ContestantDetailPage({ params }: PageProps) {
         <div className="bg-bg-2 border border-line rounded-[14px] overflow-hidden mb-8">
           <div className="grid md:grid-cols-[280px_1fr] gap-0">
             <div className="p-6 md:p-8">
-              <PortraitPlaceholder
+              <YouTubeThumbnail
+                youtubeId={contestant.highlights?.[0]?.youtube_id ?? null}
                 nameInitial={contestant.name_initial ?? contestant.name}
                 color={contestant.portrait_color}
+                status={contestant.current_status}
                 size="xl"
+                href={
+                  contestant.highlights?.[0]?.youtube_id
+                    ? `https://www.youtube.com/watch?v=${contestant.highlights[0].youtube_id}`
+                    : undefined
+                }
               />
             </div>
             <div className="p-6 md:p-8 md:pl-0">

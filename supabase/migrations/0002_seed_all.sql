@@ -15563,7 +15563,4466 @@ values
     true
   );
 
--- ----- 3) contestant_stats (default 50 — editor adjusts later) -----
+-- ----- 3) highlights (405 YouTube scenes across all contestants) -----
+insert into public.highlights (contestant_id, youtube_id, title, description, duration_sec, source_channel, sort_order)
+values
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '영수'),
+    '0_R0rTtC0RI',
+    '1기 첫번째 커플 탄생! 영수♥영자 이 커플 완전 대찬성!',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '영호'),
+    '1UCx6BoxFao',
+    '1기 영수, 영호 영식의 자기소개 (자, 다들 깜짝 놀랄 준비해!)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '영식'),
+    'OCo9KWSOrm0',
+    '제 2의 1기 영식? 누가 의자왕이 될 것인가?',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '영철'),
+    'Lske_Q1b3Xg',
+    '나는 솔로 MC진을 단체 감전 시켰던 그대들 모음집 (소 1000마리 영철)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '정수'),
+    'IdSpQRUHWCU',
+    '1기 부터 4기까지! 첫인상 첫 고백 인기 솔로 모음집 1탄',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '종수'),
+    'PYUZarrUmMQ',
+    '나는솔로 1기 종수 스페셜 (1탄) 화려한 조명의 DJ종수',
+    NULL,
+    NULL,
+    '팬채널(버프성)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '정식'),
+    'xGbJV9YtuC8',
+    '[하이라이트] 솔로들의 범상치 않은 식사 데이트 - 1기 정식의 뜨거운 데이트',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '순자'),
+    'gSD9R26AEZY',
+    '1기 자기소개하면서 끊임없이 한 남자에게 신호 - 순자의 반전 직업과 노래',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '영숙'),
+    'tJfDIHc9_gA',
+    '결말을 뒤엎는 반전! 현실 부부로 영철♥영숙',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '영순'),
+    '1UCx6BoxFao',
+    '1기 영수, 영호 영식의 자기소개',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '영자'),
+    '0_R0rTtC0RI',
+    '1기 영수♥영자 이 커플 완전 대찬성! 첫 만남부터 커플 탄생까지',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '정숙'),
+    '1UCx6BoxFao',
+    '1기 영수, 영호 영식의 자기소개',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '정순'),
+    'b8yte16pVHM',
+    '1기 정순의 친구를 놀라게 했던 5기 정수의 발언',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 1 and c.name = '정자'),
+    'QV32irrM_X0',
+    '1기 7인의 솔로녀 자기소개 (강원도청 펜싱 정자)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '영수'),
+    'LsTgx5ali6s',
+    '파일럿이자 바리스타인 영수와 건설업 종사자 영호',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '영호'),
+    'LsTgx5ali6s',
+    '파일럿이자 바리스타인 영수와 건설업 종사자 영호',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '영식'),
+    'LWiPH08P_SQ',
+    '2기 솔로남들의 직업 공개! (치과의사 영식)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '영철'),
+    'GiEzSFLcE7c',
+    '2기 솔로들의 반전(?) 나이와 직업 공개',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '정수'),
+    'GiEzSFLcE7c',
+    '2기 솔로들의 반전 나이와 직업',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '종수'),
+    'xGbJV9YtuC8',
+    '1기 정식/2기 종수의 서로가 특이한 데이트 (나솔사계)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '순자'),
+    'GiEzSFLcE7c',
+    '2기 솔로들의 반전 나이와 직업',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '영자'),
+    'GiEzSFLcE7c',
+    '2기 솔로들의 반전 나이와 직업 (영자 기자)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '정순'),
+    'GiEzSFLcE7c',
+    '2기 솔로들의 반전 나이와 직업 (정순 CF모델)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '정숙'),
+    'GiEzSFLcE7c',
+    '2기 솔로들의 반전 나이와 직업 (정숙 로펌비서)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 2 and c.name = '영숙'),
+    '-iSgqqD6iJI',
+    '2기 결혼 커플! 매 순간 운명 같았던 영수♥영숙의 러브스토리 풀버전!',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '영수'),
+    'c32RlXjAfes',
+    '3기 한의사 영수와 워커홀릭 회사원 영호 자기소개',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '영호'),
+    'c32RlXjAfes',
+    '3기 한의사 영수와 워커홀릭 회사원 영호',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '영식'),
+    'Php6-sfHrXY',
+    '3기 한의사에 빚 없고 아파트까지?! 영수 영호 영식의 자기소개',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '영철'),
+    '7Fd_LF6hfUY',
+    '솔로나라가 뒤집어졌다! 3기 영수, 영호, 영식의 반전 프로필',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '정수'),
+    '7Fd_LF6hfUY',
+    '3기 영수, 영호, 영식의 반전 프로필',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '종수'),
+    'zO_2It7WPm4',
+    '1기 종수 재등장? 눈빛마저 강렬한 3기 솔로남들 등장',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '정식'),
+    '7Fd_LF6hfUY',
+    '3기 영수, 영호, 영식의 반전 프로필',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '순자'),
+    '1Sp59zWvwQY',
+    '판소리 소리꾼 순자와 필라테스 강사 영자와 중국어 강사 정순',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '영자'),
+    '1Sp59zWvwQY',
+    '판소리 소리꾼 순자와 필라테스 강사 영자',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '정순'),
+    'mat7kFIy_24',
+    '3기 솔로녀 정순&순자 정순자 분량 모음집',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 3 and c.name = '정숙'),
+    'NWWG_X7_kbE',
+    '드디어 공개된 솔로녀 정숙의 직업은 캐스터!',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '영수'),
+    'G3d0WQLCgPk',
+    '4기 최종 선택 전 영수❤️정숙 모아보ZIP (운명적 커플)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '영호'),
+    'DjjkP_D4J5A',
+    '4기 솔로 민박 멤버 소개 (4기 솔로들)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '영식'),
+    'RUCB0O1RYb4',
+    '4기 최종 선택! 영식과 정식 중 과연 최종 커플은?!',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '영철'),
+    'iZV9sygJ3Ow',
+    '4기 영철의 전입신고를 받아드린 사람은 영숙? 정순?',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '정수'),
+    'A2gPzL3GhVY',
+    '나는솔로 ''정수'' 초대석 (4기 정수)',
+    NULL,
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '정식'),
+    'EWnvla_d05c',
+    '4기 영숙 정식 커플의 최신 근황',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '영숙'),
+    '9WAuJ7CHQ8I',
+    '우리 결혼해요💐 나는솔로 4기 영숙❤️정식이 떴다!',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '영자'),
+    'IdSpQRUHWCU',
+    '1-4기 인기 솔로 모음집',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '정숙'),
+    'ZJXZ6RVNvgE',
+    '''결혼하고 싶습니다'' 모두를 놀라게 한 4기 정숙의 자기소개',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '정순'),
+    'IdSpQRUHWCU',
+    '1-4기 인기 솔로 모음집',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '정자'),
+    'bdNfjZGutNc',
+    '시원시원한 성격에 체력까지 좋은 반전의 4기 솔로녀들 정숙 영숙 정자',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 4 and c.name = '순자'),
+    'DjjkP_D4J5A',
+    '4기 솔로 민박 멤버 소개',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '영수'),
+    'TFzX8x0o-EU',
+    '정숙을 사로잡은 남자들 영수 영호 영식의 자기소개',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '영호'),
+    'TFzX8x0o-EU',
+    '정숙을 사로잡은 남자들 영수 영호 영식의 자기소개',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '영식'),
+    'TFzX8x0o-EU',
+    '정숙을 사로잡은 남자들 영수 영호 영식의 자기소개',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '영철'),
+    'qhd7g5F81Tg',
+    '5기 영철 광수 상철의 자기소개 (인텔 엔지니어 영철, ep156)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '정수'),
+    'jz_fmoK5-mU',
+    '5기 정수와 1기 정순의 첫 커플링!',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '정식'),
+    'riL8hbvXhng',
+    '5기 고독정식 짜장면 (나솔사계 ep17-5)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '순자'),
+    'tzG6y8Nzyvk',
+    '5기 박사과정 순자 (EP25)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '영자'),
+    'tzG6y8Nzyvk',
+    '5기 영자 사업가 전향! 박사과정 순자 동시 등장 (EP25)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '정숙'),
+    'v3sHpM1Nwc4',
+    '5기 정수의 뒤늦은 구애에도 흔들리지 않는 18기 정숙',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '정순'),
+    'M0dkezDR54s',
+    '5기 솔로녀 정순&정숙의 관계 공개 자기소개 (ep5-10)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 5 and c.name = '영숙'),
+    'XWP4gPB70lU',
+    '5기 영숙 데이트 앞두고 폭풍오열 (ep11-27)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '영수'),
+    'CJmDNUKwksQ',
+    '배우 출신? 3대 로펌 소속 변호사? 6기 남자들의 자기소개 (피트니스 영수)',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '영호'),
+    'ioY8pWPn2Vw',
+    '솔로 나라 6기의 시작! 영수, 영호, 영식의 첫 등장',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '영식'),
+    'fe1UWEwsUBA',
+    '6기 결혼 커플 정숙•영식편 (누가솔로)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '영철'),
+    'RDUOJN67HM4',
+    '6기 영숙 영철의 결혼식 당일 공개!',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '광수'),
+    'LBTmgXiZsgA',
+    '6기 광수 & 7기 영숙 ''찐'' 비하인드',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '상철'),
+    'yomBQBJYbB8',
+    '상철? 광수? 6기 솔로 남들의 이름이 바뀌었다?!',
+    NULL,
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '영숙'),
+    'eNrjzCvY7EI',
+    '나는 솔로 6기 커플 영철♥영숙! 두 아이의 엄마아빠가 된 나솔 부부의 일상',
+    NULL,
+    NULL,
+    'KBS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '정숙'),
+    'fe1UWEwsUBA',
+    '6기 결혼 커플 정숙•영식편 (누가솔로)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '순자'),
+    'pzPcIPI_W0Q',
+    '6기 영숙, 정숙, 순자 첫 등장 (ep6-3)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '영자'),
+    'lvxrcVQvXec',
+    '6기 영호 영자의 이별한 이유는? (사랑은 계속된다)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '옥순'),
+    'K1VVILuo35E',
+    '6기 영호가 기다리던 예상외의 인물 - 6기 옥순',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 6 and c.name = '현숙'),
+    'EE8kojOYigE',
+    '6기 현숙 (21기 옥순이 고마웠던)',
+    NULL,
+    NULL,
+    '팬채널(나솔사계 본방 리액션)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '영수'),
+    'FgEhjnwE4Mg',
+    '결혼이 간절한 남자들! 1기 영호 & 7기 영호 & 8기 영수 (나솔사계)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '영호'),
+    '7gnpI4wfEQc',
+    '7기 풀버전 0표녀에서 히로인으로! 드라마같은 영호♥순자 러브 스토리',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '영식'),
+    'tnYfM2nLgvU',
+    '7기 모솔특집 영식 리뷰 모아보기',
+    NULL,
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '영철'),
+    'DjjkP_D4J5A',
+    '4기 솔로 민박 멤버 소개 (멀티 멤버 영상)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '광수'),
+    'MxAn5bjgx04',
+    '솔로 민박 등장 모음ZIP (멀티)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '상철'),
+    'MxAn5bjgx04',
+    '솔로 민박 등장 모음ZIP (멀티)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '경수'),
+    'WlI9RqnF7_U',
+    '28기 경수 첫 등장 (국가대표 출신 전직 축구선수)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '영숙'),
+    'LBTmgXiZsgA',
+    '7기 영숙 (6기 광수와 함께한 비하인드)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '정숙'),
+    'RJdyM02QJR4',
+    '7기 여성분들 뭐 하나 빠지는 거 없으십니다. 영숙, 정숙, 순자 첫 등장',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '순자'),
+    'VU6EugxOAi0',
+    '7기 순자의 시점으로 보는 순자❤️영호 커플의 A to Z (솔로이야기)',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '영자'),
+    'VrME0AFd-dY',
+    '7기 영자, 순자, 정숙, 영숙의 데이트 신청! 우리 집 놀러 올래?',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '옥순'),
+    'TsawfmNfMjE',
+    '화제의 옥순즈 솔로 민박 등장 모음ZIP (7기 옥순)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 7 and c.name = '현숙'),
+    'OCnXDANixAA',
+    '나솔사계 빌런특집 출연자 소개 (15기 현숙 등)',
+    NULL,
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '영수'),
+    'l2m-qHpVX1o',
+    '여자 2호와 여자 3호 사이를 오가며 춤을 추는 8기 영수',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '영호'),
+    'FgEhjnwE4Mg',
+    '결혼이 간절한 남자들! 1기 영호 & 7기 영호 & 8기 영수',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '영식'),
+    'MxAn5bjgx04',
+    '솔로 민박 등장 모음ZIP (멀티)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '영철'),
+    '5lLizNI36kM',
+    '옥순이 정복하지 못한 유일한 남자 ''영철''',
+    NULL,
+    NULL,
+    'SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '광수'),
+    'MxAn5bjgx04',
+    '솔로 민박 등장 모음ZIP (멀티)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '상철'),
+    'MxAn5bjgx04',
+    '솔로 민박 등장 모음ZIP (멀티)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '영숙'),
+    'SQHCzKcsN4s',
+    '옥순이란 이름의 계보 (6기/7기/8기/11기 옥순 첫 등장 모음)',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '정숙'),
+    'OCnXDANixAA',
+    '나솔사계 빌런특집 출연자 소개 (멀티)',
+    NULL,
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '순자'),
+    'OCnXDANixAA',
+    '나솔사계 빌런특집 출연자 소개 (멀티)',
+    NULL,
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '영자'),
+    'OCnXDANixAA',
+    '나솔사계 빌런특집 출연자 소개 (멀티)',
+    NULL,
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '옥순'),
+    'SQHCzKcsN4s',
+    '옥순이란 이름의 계보 - 8기 옥순 첫 등장',
+    NULL,
+    NULL,
+    'ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 8 and c.name = '현숙'),
+    'OCnXDANixAA',
+    '나솔사계 빌런특집 출연자 소개 (멀티)',
+    NULL,
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '영수'),
+    '3EAzq3yUWho',
+    '나는 SOLO 9기 최종 선택의 순간',
+    '9기 출연자들의 최종 선택 장면',
+    NULL,
+    'SBS Plus / ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '영호'),
+    '3EAzq3yUWho',
+    '나는 SOLO 9기 최종 선택의 순간',
+    '9기 출연자들의 최종 선택 장면',
+    NULL,
+    'SBS Plus / ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '영식'),
+    '-yTaITHHoEM',
+    '강인한 매력의 9기 영식 활약 몰아보기',
+    '9기 영식 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '영철'),
+    '3EAzq3yUWho',
+    '나는 SOLO 9기 최종 선택의 순간',
+    '9기 출연자들의 최종 선택 장면',
+    NULL,
+    'SBS Plus / ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '광수'),
+    'QenqtFJoUNg',
+    '치명적인 매력! 마성의 광수들 모음zip',
+    '나솔 역대 광수 출연자 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '상철'),
+    '3EAzq3yUWho',
+    '나는 SOLO 9기 최종 선택의 순간',
+    '9기 출연자들의 최종 선택 장면',
+    NULL,
+    'SBS Plus / ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '영숙'),
+    'q1lsF7m95A4',
+    '나는솔로 9기 광수 영숙 결혼 근황',
+    '9기 결혼 커플 광수-영숙 신혼 근황',
+    NULL,
+    'ENA / SBS Plus',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '정숙'),
+    '3EAzq3yUWho',
+    '나는 SOLO 9기 최종 선택의 순간',
+    '9기 출연자들의 최종 선택 장면',
+    NULL,
+    'SBS Plus / ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '순자'),
+    '3EAzq3yUWho',
+    '나는 SOLO 9기 최종 선택의 순간',
+    '9기 출연자들의 최종 선택 장면',
+    NULL,
+    'SBS Plus / ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '영자'),
+    '3EAzq3yUWho',
+    '나는 SOLO 9기 최종 선택의 순간',
+    '9기 출연자들의 최종 선택 장면',
+    NULL,
+    'SBS Plus / ENA',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '옥순'),
+    'csS4-5WMAas',
+    '9기 옥순 최종 커플까지 모음ZIP',
+    '9기 옥순 활약 모음',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 9 and c.name = '현숙'),
+    'rBwrtXAURms',
+    '강아지 러버 9기 현숙 활약 몰아보기',
+    '9기 현숙 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '영수'),
+    '9xW9c_a6-rg',
+    '10기, 16기, 22기 돌싱들의 자기소개 모음집',
+    '10기 출연자 자기소개 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '영호'),
+    '9xW9c_a6-rg',
+    '10기, 16기, 22기 돌싱들의 자기소개 모음집',
+    '10기 출연자 자기소개 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '영식'),
+    'W2NeiPQDvr0',
+    '짝꿩 찾으러 나선 10기 영식',
+    '10기 영식 러브라인 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '영철'),
+    'pkHnq7AxXZ8',
+    '순진남 영철과 Ms.불도저 현숙',
+    '10기 영철-현숙 러브라인',
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '광수'),
+    '9xW9c_a6-rg',
+    '10기, 16기, 22기 돌싱들의 자기소개 모음집',
+    '10기 출연자 자기소개 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '상철'),
+    '9xW9c_a6-rg',
+    '10기, 16기, 22기 돌싱들의 자기소개 모음집',
+    '10기 출연자 자기소개 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '영숙'),
+    '9xW9c_a6-rg',
+    '10기, 16기, 22기 돌싱들의 자기소개 모음집',
+    '10기 출연자 자기소개 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '정숙'),
+    'STOtBJvXe10',
+    '올타임 레전드 10기 정숙의 고품격 토크',
+    '10기 정숙 토크 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '순자'),
+    '9xW9c_a6-rg',
+    '10기, 16기, 22기 돌싱들의 자기소개 모음집',
+    '10기 출연자 자기소개 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '영자'),
+    '9xW9c_a6-rg',
+    '10기, 16기, 22기 돌싱들의 자기소개 모음집',
+    '10기 출연자 자기소개 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '옥순'),
+    '9xW9c_a6-rg',
+    '10기, 16기, 22기 돌싱들의 자기소개 모음집',
+    '10기 출연자 자기소개 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 10 and c.name = '현숙'),
+    'pkHnq7AxXZ8',
+    '순진남 영철과 Ms.불도저 현숙',
+    '10기 영철-현숙 러브라인',
+    NULL,
+    'ENA PLAY',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '영수'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '영호'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '영식'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '영철'),
+    'OeGhfKvxE8E',
+    '최강 비주얼 11기 영철 활약 몰아보기',
+    '11기 영철 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '광수'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '상철'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '영숙'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '정숙'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '순자'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '영자'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '옥순'),
+    'QKydEKBMT9A',
+    '귀여운 허당 매력 11기 옥순 모음ZIP',
+    '11기 옥순 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 11 and c.name = '현숙'),
+    'MDusvDHtluw',
+    '나는솔로 11기 1화~3화 하이라이트 모아보기',
+    '11기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '영수'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '영호'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '영식'),
+    'TLf4i-YA7OQ',
+    '순진무구 귀여운 모태 솔로 12기 영식',
+    '12기 영식 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '영철'),
+    'K94l-W_yMA0',
+    '엉뚱한 12기 영철 활약 몰아보기',
+    '12기 영철 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '광수'),
+    'AJZ_kg1U6QQ',
+    '소리 없이 강한 12기 광수 활약집',
+    '12기 광수 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '상철'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '영숙'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '정숙'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '순자'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '영자'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '옥순'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 12 and c.name = '현숙'),
+    'bAOvkDlt-Cc',
+    '12간지 솔로들의 모태솔로가 된 이유 모음zip',
+    '12기 모태솔로 출연자 소개 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '영수'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '영호'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '영식'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '영철'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '광수'),
+    'c4UeLgq9QeI',
+    '날것 그대로의 매력 13기 광수 활약',
+    '13기 광수 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '상철'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '영숙'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '정숙'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '순자'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '영자'),
+    'RPB2qXfpt-c',
+    '나는 솔로 13기 요약 몰아보기',
+    '13기 전체 요약 하이라이트',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '옥순'),
+    '_V4CIQJ6mGk',
+    '발랄한 매력의 13기 옥순 활약',
+    '13기 옥순 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 13 and c.name = '현숙'),
+    '7woQrIlz9Ns',
+    '플러팅의 귀재 13기 현숙 활약',
+    '13기 현숙 활약 모음 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '영수'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '영호'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '영식'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '영철'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '광수'),
+    'Y8iBydXH15A',
+    '자기 객관화와 분석력 14기 광수 모음집',
+    '14기 광수 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '상철'),
+    'SGWtrQ4K1cs',
+    '지금은 상철 시대 14기 상철 모음집',
+    '14기 상철 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '경수'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '영숙'),
+    'm0U4sARE9z0',
+    '0표에서 인기녀로 14기 영숙 모음zip',
+    '14기 영숙 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '정숙'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '순자'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '영자'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '옥순'),
+    'yt9AKkjzUnQ',
+    '첫인상 1등 14기 인기녀 옥순 모먼트',
+    '14기 옥순 활약 모음',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 14 and c.name = '현숙'),
+    'MdDw6nnwbtg',
+    '골드 미스&미스터 특집 14기 1~4화 25분 벼락치기',
+    '14기 출연자 소개, 첫인상, 자기소개',
+    NULL,
+    'SBS PLUS',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '영수'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '영호'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '영식'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '영철'),
+    'E8FEO3eq6KU',
+    '진격의 직진남 15기 영철 모음집',
+    '15기 영철 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '광수'),
+    'aFT0cPTb2CI',
+    '질풍노도 15기 광수 모음집',
+    '15기 광수 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '상철'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '영숙'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '정숙'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '순자'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '영자'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '옥순'),
+    'K-TQEQGe4Ts',
+    '15기 커플 광수♥옥순 알콩달콩 모음',
+    '15기 결혼 커플 광수-옥순 (나솔사계)',
+    NULL,
+    'ENA 채널 (나솔사계)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 15 and c.name = '현숙'),
+    'FqJu8hrbhs8',
+    '30분으로 몰아보는 솔로 나라 15번지의 이야기',
+    '15기 전체 요약',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '영수'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '영호'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '영식'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '영철'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '광수'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '상철'),
+    'ThTqg_MK2Rg',
+    '16기 상철♥영숙 설렘 모먼트 모음zip',
+    '16기 상철-영숙 러브라인',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '영숙'),
+    '49f0pSSs0rE',
+    '또 나만 진심이었지 16기 영숙 모음zip',
+    '16기 영숙 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '정숙'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '순자'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '영자'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '옥순'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 16 and c.name = '현숙'),
+    'd2DyU0Or4n0',
+    '16기 돌싱들의 첫 등장 모음zip',
+    '16기 출연자 첫 등장 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '영수'),
+    'GiYj-_SBEPU',
+    '이창호 닮은 꼴 17기 영수 모음zip',
+    '17기 영수 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '영호'),
+    'quRxcivKirw',
+    '17기 솔로남들의 자기소개',
+    '17기 남자 출연자 자기소개',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '영식'),
+    'quRxcivKirw',
+    '17기 솔로남들의 자기소개',
+    '17기 남자 출연자 자기소개',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '영철'),
+    'irUfs_GTXqU',
+    '분석력 甲 17기 영철 모음zip',
+    '17기 영철 활약 모음',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '광수'),
+    'quRxcivKirw',
+    '17기 솔로남들의 자기소개',
+    '17기 남자 출연자 자기소개',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '상철'),
+    'Zuea5FFE4mw',
+    '17기 상철, 현숙 사랑하는데 왜 제 잇몸이 마르죠',
+    '17기 결혼 커플 상철-현숙',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '영숙'),
+    'quRxcivKirw',
+    '17기 솔로남들의 자기소개',
+    '17기 남자 출연자 자기소개',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '정숙'),
+    'quRxcivKirw',
+    '17기 솔로남들의 자기소개',
+    '17기 남자 출연자 자기소개',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '영자'),
+    'quRxcivKirw',
+    '17기 솔로남들의 자기소개',
+    '17기 남자 출연자 자기소개',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '옥순'),
+    'quRxcivKirw',
+    '17기 솔로남들의 자기소개',
+    '17기 남자 출연자 자기소개',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '순자'),
+    'quRxcivKirw',
+    '17기 솔로남들의 자기소개',
+    '17기 남자 출연자 자기소개',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 17 and c.name = '현숙'),
+    'Zuea5FFE4mw',
+    '17기 상철, 현숙 사랑하는데 왜 제 잇몸이 마르죠',
+    '17기 결혼 커플 상철-현숙',
+    NULL,
+    'ENA 채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '영수'),
+    'pZGFI6rmJs8',
+    '18기 영수 의자왕 모먼트 (ENA)',
+    '18기 영수의 부내와 의자왕 모먼트 하이라이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '영호'),
+    'dj2swWD000s',
+    '18기 영수 영호 영식 첫 등장 (ENA EP127)',
+    'ENA EP127 18기 남자 솔로 첫 등장 모음',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '영식'),
+    'dj2swWD000s',
+    '18기 영수 영호 영식 첫 등장 (ENA EP127)',
+    'ENA EP127 18기 남자 솔로 첫 등장 모음',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '영철'),
+    'MTQWRZYjAJA',
+    '18기 영철 광수 상철 첫 등장 (ENA EP127)',
+    'ENA EP127 18기 영철 광수 상철 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '광수'),
+    '04cZATN1_PI',
+    '18기 광수와 영자의 썸 F와 T의 차이 (ENA)',
+    'ENA 18기 광수-영자 썽 하이라이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '상철'),
+    'MTQWRZYjAJA',
+    '18기 영철 광수 상철 첫 등장 (ENA EP127)',
+    'ENA EP127 18기 상철 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '영숙'),
+    'SIMto7mEqxc',
+    '18기 영수와 영숙 플러팅 줄다리기 (ENA)',
+    'ENA 18기 영수-영숙 밀당 플러팅 하이라이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '정숙'),
+    'Lgw86kTnVrQ',
+    '18기 영숙 정숙 순자 첫 등장 (ENA EP127)',
+    'ENA EP127 18기 정숙 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '순자'),
+    'Lgw86kTnVrQ',
+    '18기 영숙 정숙 순자 첫 등장 (ENA EP127)',
+    'ENA EP127 18기 순자 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '영자'),
+    'qTHkXrEvj7w',
+    '18기 영자 모음집 (ENA)',
+    'ENA 18기 에이코짱 영자 모음집',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '옥순'),
+    '2WKQZCLT6to',
+    '18기 옥순 6순위 (ENA)',
+    'ENA 18기 옥순의 6순위 화제 장면',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 18 and c.name = '현숙'),
+    '_RpBAjwu1xU',
+    '18기 영숙 영수 둘만의 세계 소외된 현숙 (ENA EP134)',
+    'ENA EP134 18기 현숙',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '영수'),
+    'CNiqVnnnGVY',
+    '19기 모솔 영수 영호 영식 첫 등장 (ENA EP136)',
+    'ENA EP136 19기 영수 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '영호'),
+    '-QiENbBylI4',
+    '19기 영호 영숙에서 현숙으로 노선 변경 (ENA EP139)',
+    'ENA EP139 19기 영호-현숙 데이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '영식'),
+    'CNiqVnnnGVY',
+    '19기 모솔 영수 영호 영식 첫 등장 (ENA EP136)',
+    'ENA EP136 19기 영식 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '영철'),
+    'c_8AO0k1RfQ',
+    '19기 모솔 광수 영철 상철 첫 등장 (ENA EP136)',
+    'ENA EP136 19기 영철 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '광수'),
+    'ef1seiwUZ-U',
+    '19기 광수 눈물 버튼을 눌러버린 영숙 (ENA EP138)',
+    'ENA EP138 19기 광수-영숙 첫 데이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '상철'),
+    'AI3wzYwr71I',
+    '19기 상철 4꽃다발 의자왕 (ENA EP137)',
+    'ENA EP137 19기 상철 첫인상 4표',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '영숙'),
+    '1BYVDUBpC9U',
+    '19기 영숙의 끝나지 않는 챌린지 (ENA)',
+    'ENA 19기 영숙 하이라이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '정숙'),
+    'X6IOObAuN4Q',
+    '19기 모솔 영숙 정숙 순자 첫 등장 (ENA EP136)',
+    'ENA EP136 19기 정숙 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '순자'),
+    'BuqqdxqviUY',
+    '19기 순자 사주풀이 (ENA EP139)',
+    'ENA EP139 19기 순자 결혼 인연',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '영자'),
+    '5l_tMC9tE3Q',
+    '19기 영자 인터뷰를 멈춰버린 영수 (ENA)',
+    'ENA 19기 영수-영자 오해 해장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '옥순'),
+    '0XzZvVTbTJc',
+    '19기 모솔 첫 이야기 (ENA)',
+    'ENA 19기 모태솔로 첫 이야기 모음집 - 옥순 포함',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 19 and c.name = '현숙'),
+    '0XzZvVTbTJc',
+    '19기 모솔 첫 이야기 (ENA)',
+    'ENA 19기 모태솔로 첫 이야기 모음집 - 현숙 포함',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '영수'),
+    'ofMm9m-cHUs',
+    '20기 모범생 등장 모음ZIP (ENA)',
+    'ENA 20기 0분 15초 영수 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '영호'),
+    'ofMm9m-cHUs',
+    '20기 모범생 등장 모음ZIP (ENA)',
+    'ENA 20기 2분 34초 영호 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '영식'),
+    'ofMm9m-cHUs',
+    '20기 모범생 등장 모음ZIP (ENA)',
+    'ENA 20기 3분 49초 영식 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '영철'),
+    'ofMm9m-cHUs',
+    '20기 모범생 등장 모음ZIP (ENA)',
+    'ENA 20기 5분 5초 영철 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '광수'),
+    's361Im92CCA',
+    '20기 광수 모음ZIP (ENA)',
+    'ENA 20기 광수 진국 모음집',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '상철'),
+    'ofMm9m-cHUs',
+    '20기 모범생 등장 모음ZIP (ENA)',
+    'ENA 20기 8분 54초 상철 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '영숙'),
+    'ofMm9m-cHUs',
+    '20기 모범생 등장 모음ZIP (ENA)',
+    'ENA 20기 10분 3초 영숙 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '정숙'),
+    'CScriVkMZQU',
+    '20기 정숙 모음ZIP (ENA)',
+    'ENA 20기 정숙 솔직 매력 모음집',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '순자'),
+    'ofMm9m-cHUs',
+    '20기 모범생 등장 모음ZIP (ENA)',
+    'ENA 20기 14분 9초 순자 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '영자'),
+    'M8ekKzCDSCA',
+    '20기 영자 매력 어필 기타 연주 (ENA EP147)',
+    'ENA EP147 20기 영자 기타 연주',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '옥순'),
+    'gQVkwRIjyOQ',
+    '20기 영자 옥순 현숙 자기소개 (ENA EP147)',
+    'ENA EP147 20기 옥순 G사 SW 엔지니어',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 20 and c.name = '현숙'),
+    'gQVkwRIjyOQ',
+    '20기 영자 옥순 현숙 자기소개 (ENA EP147)',
+    'ENA EP147 20기 현숙 A사 화장품 연구원',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '영수'),
+    'lSsgoIzLD2w',
+    '21기 정숙 인기녀 3명과 데이트 (ENA EP157)',
+    'ENA EP157 21기 영수-정숙 데이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '영호'),
+    'lSsgoIzLD2w',
+    '21기 정숙 인기녀 3명과 데이트 (ENA EP157)',
+    'ENA EP157 21기 영호-정숙 데이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '영식'),
+    'bKWS-iClzSU',
+    '21기 영식 영숙 가치관 탐색 (ENA EP157)',
+    'ENA EP157 21기 영식-영숙 데이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '영철'),
+    'zomrvj-KNcU',
+    '21기 솔로녀 선택 시간 (ENA EP159)',
+    'ENA EP159 21기 영철 포함 영식-광수 고독 정식',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '광수'),
+    'i6rzWaMmt2A',
+    '21기 광수 이상형과 다른 영자 데이트 (ENA EP160)',
+    'ENA EP160 21기 광수-영자 슈퍼 데이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '상철'),
+    'lSsgoIzLD2w',
+    '21기 정숙 인기녀 3명과 데이트 (ENA EP157)',
+    'ENA EP157 21기 상철-정숙 데이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '영숙'),
+    'qo87CCRvbQo',
+    '21기 영숙 정숙 첫 등장 (ENA EP155)',
+    'ENA EP155 21기 영숙 첫 등장 김태리 닮은꼴',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '정숙'),
+    'lSsgoIzLD2w',
+    '21기 정숙 인기녀 3명과 데이트 (ENA EP157)',
+    'ENA EP157 21기 정숙 모스크바 회계법인',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '순자'),
+    'ZY2sbV8mQjo',
+    '21기 영숙 정숙 순자 자기소개 (ENA EP156)',
+    'ENA EP156 21기 순자 삼성전자 소방방재',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '영자'),
+    'mRQWiRNn9B8',
+    '21기 솔로 첫 선택 반전 (ENA EP157)',
+    'ENA EP157 21기 영자 첫 선택',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '옥순'),
+    'mRQWiRNn9B8',
+    '21기 솔로 첫 선택 반전 (ENA EP157)',
+    'ENA EP157 21기 옥순 필라테스 원장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 21 and c.name = '현숙'),
+    'c2fzXdpr4cs',
+    '21기 현숙 칭찬 폭격에 정신 못 차리는 광수 (ENA EP157)',
+    'ENA EP157 21기 현숙-광수',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '경수'),
+    'Bl9-wN0hRLI',
+    '22기 경수 고추 플러팅 (ENA EP163)',
+    'ENA EP163 22기 경수 넉살남 고추팅',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '광수'),
+    'URaITMTas44',
+    '22기 광수 영자 결혼 커플 모음집 (ENA)',
+    'ENA 22기 광수-영자 종교 극복 결혼 모음집',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '상철'),
+    'J67lM4JJIgE',
+    '22기 영철 광수 상철 첫 등장 (ENA EP162)',
+    'ENA EP162 22기 상철 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '영수'),
+    'S5OlFDltbdM',
+    '22기 영수 선택한 정희 첫인상 (ENA EP162)',
+    'ENA EP162 22기 영수 마취통증의학과 전문의',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '영식'),
+    'EGkWXtot3JU',
+    '22기 영수 영철 영식 자기소개 (ENA EP163)',
+    'ENA EP163 22기 영식 금융중개업 대표',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '영철'),
+    'J67lM4JJIgE',
+    '22기 영철 광수 상철 첫 등장 (ENA EP162)',
+    'ENA EP162 22기 영철 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '영호'),
+    'VAsQPp8Oj7k',
+    '22기 영호 음주 단속 (ENA EP163)',
+    'ENA EP163 22기 영호 술 단속',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '영숙'),
+    '910hdUCYLRI',
+    '22기 영숙 모음집 (ENA)',
+    'ENA 22기 돌싱녀 대표 영숙 모음집',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '정숙'),
+    'MZhpUAyKREk',
+    '22기 이혼 전문 변호사 정숙 탐구생활 (솔비 채널)',
+    '솔비 채널 22기 돌돌싱 정숙 인터뷰',
+    NULL,
+    '팬채널(솔비)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '순자'),
+    'RpYoAMG6lUg',
+    '22기 순자 옥순 자기소개 (ENA EP164)',
+    'ENA EP164 22기 순자 8급 공무원',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '영자'),
+    'dkQj6uLTr78',
+    '22기 영숙 정숙 영자 자기소개 (ENA EP164)',
+    'ENA EP164 22기 영자 분당차병원 출신 PT센터 대표',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '옥순'),
+    '3JA8BqDaQE4',
+    '22기 옥순 모음집 (ENA)',
+    'ENA 22기 새침한 공주님 옥순 모음집',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '현숙'),
+    'Almx4mXrnks',
+    '22기 현숙 정희 자기소개 (ENA EP164)',
+    'ENA EP164 22기 현숙 전남편 고금리 대출',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 22 and c.name = '정희'),
+    'dlSSsbtsThU',
+    '22기 경수 정희 새 이름 첫 등장 (ENA EP162)',
+    'ENA EP162 22기 정희 첫 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '영수'),
+    '8TK_KOLyibE',
+    '23기 영수 종교 관련 진심 (ENA EP171)',
+    'ENA EP171 23기 영수 LS증권',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '영호'),
+    'sPLQSNse0Qg',
+    '23기 영호 순자 슈퍼데이트 (ENA EP171)',
+    'ENA EP171 23기 영호-순자 데이트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '영식'),
+    '5MLBFACGmis',
+    '23기 첫인상 동시 선택 영식 영숙 (ENA)',
+    'ENA 23기 영식 멘트로 영숙 녹이기',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '영철'),
+    '7HQUpLeDLaY',
+    '23기 영수 영철 눈치게임 (ENA EP171)',
+    'ENA EP171 23기 영철 영숙 원픽 부상',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '광수'),
+    'I15H7rpgFwE',
+    '23기 광수 울보 모음집 (ENA)',
+    'ENA 23기 광수 눈물 2번 모음집',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '상철'),
+    'WgdMQ4WklsM',
+    '23기 마음 전하기 미션 (ENA EP172)',
+    'ENA EP172 23기 상철 포함',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '영숙'),
+    'VQaWSYb-h9k',
+    '23기 영숙 순자 영자 자기소개 (ENA)',
+    'ENA 23기 영숙 GS에너지 사내변호사',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '순자'),
+    'VQaWSYb-h9k',
+    '23기 영숙 순자 영자 자기소개 (ENA)',
+    'ENA 23기 순자 뉴에이지 연주팀 대표 첼리스트',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '영자'),
+    'uGw9DFBs5Dc',
+    '23기 영자 옥순 현숙 첫 등장 (ENA)',
+    'ENA 23기 영자 외국계 제약회사 차장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '옥순'),
+    'uGw9DFBs5Dc',
+    '23기 영자 옥순 현숙 첫 등장 (ENA)',
+    'ENA 23기 옥순 IT 프로젝트 매니저',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 23 and c.name = '현숙'),
+    'uGw9DFBs5Dc',
+    '23기 영자 옥순 현숙 첫 등장 (ENA)',
+    'ENA 23기 현숙 푸본현대생명 한국무용',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '영수'),
+    '266OFDb6FMM',
+    '24기 남자 입장씬 모음 (ENA)',
+    'ENA 24기 너드남 첫 등장 모음 - 영수',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '영호'),
+    '266OFDb6FMM',
+    '24기 남자 입장씬 모음 (ENA)',
+    'ENA 24기 너드남 첫 등장 모음 - 영호',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '영식'),
+    '266OFDb6FMM',
+    '24기 남자 입장씬 모음 (ENA)',
+    'ENA 24기 너드남 첫 등장 모음 - 영식',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '영철'),
+    'T5pOcl6FeKU',
+    '24기 영철 광수 상철 첫 등장 (ENA EP181)',
+    'ENA EP181 24기 영철 유도선수 다馬스 끌고 등장',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '광수'),
+    'kXVi5NqOHvQ',
+    '24기 광수 두 여자만 핫팩 서운한 순자 (ENA EP182)',
+    'ENA EP182 24기 광수',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '상철'),
+    'T5pOcl6FeKU',
+    '24기 영철 광수 상철 첫 등장 (ENA EP181)',
+    'ENA EP181 24기 상철 대동물 수의사',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '영숙'),
+    'XxrfHTh_z8c',
+    '24기 영식 폭주 영자 정숙 베프 (ENA EP189)',
+    'ENA EP189 24기 영숙',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '정숙'),
+    'odvnlJEon4Y',
+    '24기 광수 정숙 데이트 (ENA EP184)',
+    'ENA EP184 24기 광수-정숙',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '순자'),
+    'x0q9_rAztmo',
+    '24기 영철 마음 흔드는 옥순 (ENA EP182)',
+    'ENA EP182 24기 순자 중앙행정기관 7급',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '영자'),
+    'dDXj_It9QhY',
+    '24기 영자 옥순 현숙 첫 등장 (ENA EP181)',
+    'ENA EP181 24기 영자 너드남 접수하러 온 퀸',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '옥순'),
+    'WyefpKuHiok',
+    '24기 옥순 화끈한 플러팅 (ENA EP181)',
+    'ENA EP181 24기 옥순 KT 브랜드 전략실',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 24 and c.name = '현숙'),
+    '4znq-qw1nio',
+    '24기 영자 옥순 현숙 자기소개 (ENA EP183)',
+    'ENA EP183 24기 현숙 병원 약사',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '영수'),
+    'gHKMQ5yOG3g',
+    '25기 영수 영호 영식 자기소개 (ENA EP192)',
+    'ENA EP192 25기 영수 한화라이프랩 본부장 성악가',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '영호'),
+    'gHKMQ5yOG3g',
+    '25기 영수 영호 영식 자기소개 (ENA EP192)',
+    'ENA EP192 25기 영호 개업 약사',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '영식'),
+    'gHKMQ5yOG3g',
+    '25기 영수 영호 영식 자기소개 (ENA EP192)',
+    'ENA EP192 25기 영식 우리은행 대리',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '영철'),
+    'CWMyMmqZscU',
+    '25기 영철 광수 상철 첫 등장 (ENA EP191)',
+    'ENA EP191 25기 영철 국대 김민재 선수의 선배',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '광수'),
+    'BhxHj7onPl4',
+    '25기 광수 인제군 유일의사 정체 (ENA EP191)',
+    'ENA EP191 25기 광수 강원도 인제군 유일의사',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '상철'),
+    'CWMyMmqZscU',
+    '25기 영철 광수 상철 첫 등장 (ENA EP191)',
+    'ENA EP191 25기 상철 SK하이닉스',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '영숙'),
+    'fKtVzdlho34',
+    '25기 영숙 순자 영자 첫 등장 (ENA EP191)',
+    'ENA EP191 25기 영숙 롯데멤버스 마케팅',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '순자'),
+    '3ATk6YOhfQw',
+    '25기 첫인상 선택 순자 올킬 (ENA EP191)',
+    'ENA EP191 25기 순자 세스코 라이프케어',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '영자'),
+    'fKtVzdlho34',
+    '25기 영숙 순자 영자 첫 등장 (ENA EP191)',
+    'ENA EP191 25기 영자 일러스트레이터 여우지니',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '옥순'),
+    'XrY5vO_oJJc',
+    '25기 옥순 현숙 미경 첫 등장 (ENA EP191)',
+    'ENA EP191 25기 옥순 플루티스트 미국 음대',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '현숙'),
+    'XrY5vO_oJJc',
+    '25기 옥순 현숙 미경 첫 등장 (ENA EP191)',
+    'ENA EP191 25기 현숙 서울시청 6급 기술직',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 25 and c.name = '미경'),
+    'XrY5vO_oJJc',
+    '25기 옥순 현숙 미경 첫 등장 (ENA EP191)',
+    'ENA EP191 25기 미경 해외 전시 디자이너 PM',
+    NULL,
+    'ENA 공식',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '영수'),
+    'StIaz0o2xfA',
+    '26기 영수&영호&영식의 자기소개! 여자들도 감탄하는 1등 신랑감 등장✨',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '영호'),
+    'StIaz0o2xfA',
+    '26기 영수&영호&영식의 자기소개! 여자들도 감탄하는 1등 신랑감 등장✨',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '영식'),
+    'StIaz0o2xfA',
+    '26기 영수&영호&영식의 자기소개! 여자들도 감탄하는 1등 신랑감 등장✨',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '영철'),
+    'bDKhRe7WHQQ',
+    '26기 영철&광수&상철&경수의 자기소개! 3시간 일하고 남들보다 돈을 잘 벌어요👍',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '광수'),
+    'bDKhRe7WHQQ',
+    '26기 영철&광수&상철&경수의 자기소개! 3시간 일하고 남들보다 돈을 잘 벌어요👍',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '상철'),
+    'bDKhRe7WHQQ',
+    '26기 영철&광수&상철&경수의 자기소개! 3시간 일하고 남들보다 돈을 잘 벌어요👍',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '경수'),
+    '1axWoSJAXGc',
+    '[하이라이트] 인기남으로 급부상한 26기 경수를 두고 벌이는 용담VS국화의 전쟁! #나솔사계 EP.148',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '영숙'),
+    'JYSXuLHGxZM',
+    '26기 영숙&정숙&순자의 자기소개! 바이올린 연주를 보여준 그녀의 장기자랑 공개🎵',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '정숙'),
+    'JYSXuLHGxZM',
+    '26기 영숙&정숙&순자의 자기소개! 바이올린 연주를 보여준 그녀의 장기자랑 공개🎵',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '순자'),
+    'JYSXuLHGxZM',
+    '26기 영숙&정숙&순자의 자기소개! 바이올린 연주를 보여준 그녀의 장기자랑 공개🎵',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '영자'),
+    '3dDs4iQ4E9Y',
+    '26기 영자&옥순&현숙의 자기소개! 남자들을 심쿵하게 만든 평생 직장❤',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '옥순'),
+    '3dDs4iQ4E9Y',
+    '26기 영자&옥순&현숙의 자기소개! 남자들을 심쿵하게 만든 평생 직장❤',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 26 and c.name = '현숙'),
+    '3dDs4iQ4E9Y',
+    '26기 영자&옥순&현숙의 자기소개! 남자들을 심쿵하게 만든 평생 직장❤',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '영수'),
+    'TraYssFjw2U',
+    '27기 영수&영호&영식의 자기소개! 24기 영식과 똑같은 직업을 가진 이 남자?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '영호'),
+    'TraYssFjw2U',
+    '27기 영수&영호&영식의 자기소개! 24기 영식과 똑같은 직업을 가진 이 남자?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '영식'),
+    'TraYssFjw2U',
+    '27기 영수&영호&영식의 자기소개! 24기 영식과 똑같은 직업을 가진 이 남자?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '영철'),
+    'RTY8gJBT7yc',
+    '27기 영철&광수&상철의 자기소개! 감미로운 발라드를 부르는 장기자랑 공개🎵',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '광수'),
+    'RTY8gJBT7yc',
+    '27기 영철&광수&상철의 자기소개! 감미로운 발라드를 부르는 장기자랑 공개🎵',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '상철'),
+    'RTY8gJBT7yc',
+    '27기 영철&광수&상철의 자기소개! 감미로운 발라드를 부르는 장기자랑 공개🎵',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '영숙'),
+    'djv_w8exQe8',
+    '27기 영숙&정숙&순자의 자기소개! 난소 나이가 20대인 건강미 넘치는 그녀😘',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '정숙'),
+    'djv_w8exQe8',
+    '27기 영숙&정숙&순자의 자기소개! 난소 나이가 20대인 건강미 넘치는 그녀😘',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '순자'),
+    'djv_w8exQe8',
+    '27기 영숙&정숙&순자의 자기소개! 난소 나이가 20대인 건강미 넘치는 그녀😘',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '영자'),
+    'IAXlrdzjLWo',
+    '27기 영자&옥순&현숙의 자기소개! 무려 20가지 대외 활동을 경험했다고?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '옥순'),
+    'IAXlrdzjLWo',
+    '27기 영자&옥순&현숙의 자기소개! 무려 20가지 대외 활동을 경험했다고?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 27 and c.name = '현숙'),
+    'IAXlrdzjLWo',
+    '27기 영자&옥순&현숙의 자기소개! 무려 20가지 대외 활동을 경험했다고?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '영수'),
+    'DSbqawuGOHk',
+    '28기 영수&영호&영식의 자기소개! 도중에 여자를 울리는 돌싱남😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '영호'),
+    'DSbqawuGOHk',
+    '28기 영수&영호&영식의 자기소개! 도중에 여자를 울리는 돌싱남😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '영식'),
+    'DSbqawuGOHk',
+    '28기 영수&영호&영식의 자기소개! 도중에 여자를 울리는 돌싱남😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '영철'),
+    'EDyudNKOwRk',
+    '28기 영철&광수&상철&경수의 자기소개! 결혼에 진심인 스펙 좋은 돌싱남들⭐',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '광수'),
+    'EDyudNKOwRk',
+    '28기 영철&광수&상철&경수의 자기소개! 결혼에 진심인 스펙 좋은 돌싱남들⭐',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '상철'),
+    'k9iWaZkEEGY',
+    '나는솔로 28기 정숙 상철 결혼식 현장. 불참 출연자, 상철 축가 돌발상황',
+    '',
+    NULL,
+    '촌장엔터테인먼트TV (나는SOLO 그 후 사랑은 계속된다)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '경수'),
+    'EDyudNKOwRk',
+    '28기 영철&광수&상철&경수의 자기소개! 결혼에 진심인 스펙 좋은 돌싱남들⭐',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '영숙'),
+    'v4lbpd7uvf0',
+    '28기 영숙&정숙&순자&영자의 자기소개! 여자로서 사랑이 하고 싶은 워킹맘들😍',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '정숙'),
+    'k9iWaZkEEGY',
+    '나는솔로 28기 정숙 상철 결혼식 현장. 불참 출연자, 상철 축가 돌발상황',
+    '',
+    NULL,
+    '촌장엔터테인먼트TV (나는SOLO 그 후 사랑은 계속된다)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '순자'),
+    'v4lbpd7uvf0',
+    '28기 영숙&정숙&순자&영자의 자기소개! 여자로서 사랑이 하고 싶은 워킹맘들😍',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '영자'),
+    'v4lbpd7uvf0',
+    '28기 영숙&정숙&순자&영자의 자기소개! 여자로서 사랑이 하고 싶은 워킹맘들😍',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '옥순'),
+    'RotnDqjARao',
+    '28기 현숙&옥순&정희의 자기소개! 출산할 생각이 없다는 그녀의 충격 고백😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '현숙'),
+    'RotnDqjARao',
+    '28기 현숙&옥순&정희의 자기소개! 출산할 생각이 없다는 그녀의 충격 고백😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 28 and c.name = '정희'),
+    'RotnDqjARao',
+    '28기 현숙&옥순&정희의 자기소개! 출산할 생각이 없다는 그녀의 충격 고백😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '영수'),
+    'LAWKLS3ETgs',
+    '29기 연하남 영수 영호 영식의 자기소개💙 나이가 너무 어린데😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '영호'),
+    'LAWKLS3ETgs',
+    '29기 연하남 영수 영호 영식의 자기소개💙 나이가 너무 어린데😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '영식'),
+    'LAWKLS3ETgs',
+    '29기 연하남 영수 영호 영식의 자기소개💙 나이가 너무 어린데😲?!',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '영철'),
+    '6djeZ4eUv2s',
+    '나는솔로 29기 영철 정숙 결혼식 현장. 불참 출연자, 부케 돌발상황',
+    '',
+    NULL,
+    '촌장엔터테인먼트TV (나는SOLO 그 후 사랑은 계속된다)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '광수'),
+    'Dgql36H1toc',
+    '29기 연하남 영철 광수 상철의 자기소개💙 9살 미만 연상 누나 찾아요😊',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '상철'),
+    'Dgql36H1toc',
+    '29기 연하남 영철 광수 상철의 자기소개💙 9살 미만 연상 누나 찾아요😊',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '영숙'),
+    '7Cy8gXGO5TU',
+    '29기 연상녀 영숙 정숙 순자의 자기소개❤️ 고스펙 가진 누나들👍',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '정숙'),
+    '6djeZ4eUv2s',
+    '나는솔로 29기 영철 정숙 결혼식 현장. 불참 출연자, 부케 돌발상황',
+    '',
+    NULL,
+    '촌장엔터테인먼트TV (나는SOLO 그 후 사랑은 계속된다)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '순자'),
+    '7Cy8gXGO5TU',
+    '29기 연상녀 영숙 정숙 순자의 자기소개❤️ 고스펙 가진 누나들👍',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '영자'),
+    'i94cTu54Vt4',
+    '29기 연상녀 영자 옥순 현숙의 자기소개❤️ 두부상 남자가 취향이에요😊',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '옥순'),
+    'i94cTu54Vt4',
+    '29기 연상녀 영자 옥순 현숙의 자기소개❤️ 두부상 남자가 취향이에요😊',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 29 and c.name = '현숙'),
+    'i94cTu54Vt4',
+    '29기 연상녀 영자 옥순 현숙의 자기소개❤️ 두부상 남자가 취향이에요😊',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '영수'),
+    '-5umwas5jVI',
+    '(나는솔로 30기) 옥순♥영수, 여행 중 감동의 프러포즈…드디어 진짜 결혼!',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '영호'),
+    'xd5WlNmz9Qw',
+    '30기 에겐남들의 자기소개💜 애교 재롱잔치까쥐~??🤡',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '영식'),
+    'xd5WlNmz9Qw',
+    '30기 에겐남들의 자기소개💜 애교 재롱잔치까쥐~??🤡',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '영철'),
+    'xd5WlNmz9Qw',
+    '30기 에겐남들의 자기소개💜 애교 재롱잔치까쥐~??🤡',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '광수'),
+    'xd5WlNmz9Qw',
+    '30기 에겐남들의 자기소개💜 애교 재롱잔치까쥐~??🤡',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '상철'),
+    'xd5WlNmz9Qw',
+    '30기 에겐남들의 자기소개💜 애교 재롱잔치까쥐~??🤡',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '영숙'),
+    'IyGDUl3PgSs',
+    '''나솔 최초 여경👮🏻 등장??'' 30기 영숙 정숙 순자의 테토녀 자기소개💜',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '정숙'),
+    'IyGDUl3PgSs',
+    '''나솔 최초 여경👮🏻 등장??'' 30기 영숙 정숙 순자의 테토녀 자기소개💜',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '순자'),
+    'IyGDUl3PgSs',
+    '''나솔 최초 여경👮🏻 등장??'' 30기 영숙 정숙 순자의 테토녀 자기소개💜',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '영자'),
+    'kQhCo_kWxMQ',
+    '''취미가 낚시🎣??'' 30기 테토녀 영자 옥순 현숙의 자기소개💜',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '옥순'),
+    '-5umwas5jVI',
+    '(나는솔로 30기) 옥순♥영수, 여행 중 감동의 프러포즈…드디어 진짜 결혼!',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 30 and c.name = '현숙'),
+    'kQhCo_kWxMQ',
+    '''취미가 낚시🎣??'' 30기 테토녀 영자 옥순 현숙의 자기소개💜',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '영수'),
+    '4LBZKNltSa0',
+    '31기 남자 자기소개 TIME💚 화려한 스펙들🔥',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '영호'),
+    '4LBZKNltSa0',
+    '31기 남자 자기소개 TIME💚 화려한 스펙들🔥',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '영식'),
+    '4LBZKNltSa0',
+    '31기 남자 자기소개 TIME💚 화려한 스펙들🔥',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '영철'),
+    '4LBZKNltSa0',
+    '31기 남자 자기소개 TIME💚 화려한 스펙들🔥',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '광수'),
+    '4LBZKNltSa0',
+    '31기 남자 자기소개 TIME💚 화려한 스펙들🔥',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '상철'),
+    '4LBZKNltSa0',
+    '31기 남자 자기소개 TIME💚 화려한 스펙들🔥',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '경수'),
+    'IwkR8V8u30k',
+    '나는솔로 31기 경수 순자 10월 공식 결혼 발표! 결혼 전 충격적인 월수입 재산 공개!',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '영숙'),
+    'bBACgDWF4vU',
+    '31기 여자 자기소개 TIME💚 장기연애 특집인가요??😙',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '정숙'),
+    'bBACgDWF4vU',
+    '31기 여자 자기소개 TIME💚 장기연애 특집인가요??😙',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '순자'),
+    'IwkR8V8u30k',
+    '나는솔로 31기 경수 순자 10월 공식 결혼 발표! 결혼 전 충격적인 월수입 재산 공개!',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '영자'),
+    'bBACgDWF4vU',
+    '31기 여자 자기소개 TIME💚 장기연애 특집인가요??😙',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '옥순'),
+    'bBACgDWF4vU',
+    '31기 여자 자기소개 TIME💚 장기연애 특집인가요??😙',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '현숙'),
+    'bBACgDWF4vU',
+    '31기 여자 자기소개 TIME💚 장기연애 특집인가요??😙',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 31 and c.name = '정희'),
+    'bBACgDWF4vU',
+    '31기 여자 자기소개 TIME💚 장기연애 특집인가요??😙',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '영수'),
+    'EWxBR5CIVxY',
+    '원한다면 정관 오픈 가능(?) 매콤한 돌싱남 영수, 영호, 영식의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '영호'),
+    'EWxBR5CIVxY',
+    '원한다면 정관 오픈 가능(?) 매콤한 돌싱남 영수, 영호, 영식의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '영식'),
+    'EWxBR5CIVxY',
+    '원한다면 정관 오픈 가능(?) 매콤한 돌싱남 영수, 영호, 영식의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '영철'),
+    'MmEcUx61F5g',
+    '32기 돌싱 영철 광수 상철 경수의 자기소개💙 누리호 4차 발사체 제작자 등장??',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '광수'),
+    'MmEcUx61F5g',
+    '32기 돌싱 영철 광수 상철 경수의 자기소개💙 누리호 4차 발사체 제작자 등장??',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '상철'),
+    'MmEcUx61F5g',
+    '32기 돌싱 영철 광수 상철 경수의 자기소개💙 누리호 4차 발사체 제작자 등장??',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '경수'),
+    'MmEcUx61F5g',
+    '32기 돌싱 영철 광수 상철 경수의 자기소개💙 누리호 4차 발사체 제작자 등장??',
+    '',
+    NULL,
+    'SBS Plus 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '영숙'),
+    'vnQcpJy3T0c',
+    '상견례 날짜도, 웨딩홀도 혼자 계약했다고!? 32기 영숙, 정숙, 순자의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '정숙'),
+    'vnQcpJy3T0c',
+    '상견례 날짜도, 웨딩홀도 혼자 계약했다고!? 32기 영숙, 정숙, 순자의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '순자'),
+    'vnQcpJy3T0c',
+    '상견례 날짜도, 웨딩홀도 혼자 계약했다고!? 32기 영숙, 정숙, 순자의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '영자'),
+    'y3won_A-Osk',
+    '이거 완전 이상형이 영철이잖아❤️ 32기 영자, 옥순, 현숙, 정희의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '옥순'),
+    'y3won_A-Osk',
+    '이거 완전 이상형이 영철이잖아❤️ 32기 영자, 옥순, 현숙, 정희의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '현숙'),
+    'y3won_A-Osk',
+    '이거 완전 이상형이 영철이잖아❤️ 32기 영자, 옥순, 현숙, 정희의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 32 and c.name = '정희'),
+    'y3won_A-Osk',
+    '이거 완전 이상형이 영철이잖아❤️ 32기 영자, 옥순, 현숙, 정희의 자기소개',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '영수'),
+    'N9YqRIEwfT8',
+    '모솔남들의 자기소개 1 #나는솔로',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '영호'),
+    'N9YqRIEwfT8',
+    '모솔남들의 자기소개 1 #나는솔로',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '영식'),
+    'N9YqRIEwfT8',
+    '모솔남들의 자기소개 1 #나는솔로',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '영철'),
+    'N9YqRIEwfT8',
+    '모솔남들의 자기소개 1 #나는솔로',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '광수'),
+    'N9YqRIEwfT8',
+    '모솔남들의 자기소개 1 #나는솔로',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '상철'),
+    'N9YqRIEwfT8',
+    '모솔남들의 자기소개 1 #나는솔로',
+    '',
+    NULL,
+    'ENA 공식 (나는SOLO)',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '영숙'),
+    'IQWY7wTn4VM',
+    '[나는솔로 33기] 모태솔로특집 여출 자기소개 리뷰',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '정숙'),
+    'IQWY7wTn4VM',
+    '[나는솔로 33기] 모태솔로특집 여출 자기소개 리뷰',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '순자'),
+    'IQWY7wTn4VM',
+    '[나는솔로 33기] 모태솔로특집 여출 자기소개 리뷰',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '영자'),
+    'IQWY7wTn4VM',
+    '[나는솔로 33기] 모태솔로특집 여출 자기소개 리뷰',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '옥순'),
+    'IQWY7wTn4VM',
+    '[나는솔로 33기] 모태솔로특집 여출 자기소개 리뷰',
+    '',
+    NULL,
+    '팬채널',
+    0
+  ),
+  (
+    (select c.id from public.contestants c
+     join public.seasons s on c.season_id = s.id
+     where s.number = 33 and c.name = '현숙'),
+    'IQWY7wTn4VM',
+    '[나는솔로 33기] 모태솔로특집 여출 자기소개 리뷰',
+    '',
+    NULL,
+    '팬채널',
+    0
+  );
+
+-- ----- 3.5) contestant_stats (default 50 — editor adjusts later) -----
 -- contestant_id via (season_number, name) join
 insert into public.contestant_stats (contestant_id, charm, humor, warmth, intelligence, leadership, style)
 select c.id, 50, 50, 50, 50, 50, 50
