@@ -1,19 +1,21 @@
 // app/page.tsx
 import Link from "next/link";
-import { ArrowRight, Users, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Users, MessageCircle, Sparkles, Newspaper } from "lucide-react";
 import { getAllSeasons, getContestantCountBySeason } from "@/lib/data/seasons";
 import { getFeaturedContestants } from "@/lib/data/contestants";
 import { getRecentPosts } from "@/lib/data/posts";
+import { getRecentNews } from "@/lib/data/contestants";
 import { SeasonGrid } from "@/components/season/SeasonGrid";
 import { ContestantCard } from "@/components/contestant/ContestantCard";
 import { PostCard } from "@/components/community/PostCard";
 
 export default async function HomePage() {
-  const [seasons, countMap, featured, recentPosts] = await Promise.all([
+  const [seasons, countMap, featured, recentPosts, recentNews] = await Promise.all([
     getAllSeasons(),
     getContestantCountBySeason(),
     getFeaturedContestants(8),
     getRecentPosts(5),
+    getRecentNews(6),
   ]);
 
   const totalContestants = Array.from(countMap.values()).reduce((a, b) => a + b, 0);
@@ -106,6 +108,59 @@ export default async function HomePage() {
           <SeasonGrid seasons={seasons} countMap={countMap} />
         </div>
       </section>
+
+      {/* Recent news — 결혼/이혼/근황 하이라이트 */}
+      {recentNews.length > 0 && (
+        <section className="py-20">
+          <div className="max-w-site mx-auto px-6">
+            <div className="flex items-end justify-between gap-6 flex-wrap mb-8">
+              <div>
+                <h2 className="font-serif text-[clamp(28px,4vw,38px)] font-semibold mb-2">
+                  최근 근황 · 후일담
+                </h2>
+                <p className="text-ink-soft">
+                  <Newspaper className="w-4 h-4 inline-block -mt-0.5 mr-1.5 text-accent-rose" />
+                  결혼 · 이혼 · 최신 근황을 모았어요
+                </p>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {recentNews.map((c) => (
+                <Link
+                  key={c.id}
+                  href={`/contestants/${c.id}`}
+                  className="block bg-bg-2 border border-line rounded-[14px] p-5 hover:border-accent-rose/40 hover:-translate-y-0.5 transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div
+                      className="w-10 h-10 rounded-lg grid place-items-center font-serif text-[14px] font-semibold text-white shrink-0"
+                      style={{ background: `linear-gradient(135deg, var(--accent-${c.portrait_color}))` }}
+                    >
+                      {c.name_initial ?? c.name}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[15px] font-semibold">
+                        {c.name}
+                        {c.season && (
+                          <span className="text-muted text-[12px] font-normal ml-1.5">{c.season.number}기</span>
+                        )}
+                      </p>
+                      <p className="text-[12px] text-muted">
+                        {c.job ?? "—"}
+                      </p>
+                    </div>
+                  </div>
+                  {c.recent_news && (
+                    <p className="text-[13px] text-ink-soft leading-relaxed line-clamp-3">
+                      {c.recent_news}
+                    </p>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Featured contestants */}
       {featured.length > 0 && (

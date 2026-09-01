@@ -1,4 +1,21 @@
 -- =========================================================================
+-- 솔로위키 v2 마이그레이션 [1/2] — 스키마 (12KB)
+-- Supabase SQL Editor에 붙여넣고 Run (기존 데이터는 모두 삭제됩니다)
+-- =========================================================================
+
+-- 1) DROP ALL
+drop table if exists public.posts cascade;
+drop table if exists public.post_votes cascade;
+drop table if exists public.reports cascade;
+drop table if exists public.highlights cascade;
+drop table if exists public.contestant_stats cascade;
+drop table if exists public.contestants cascade;
+drop table if exists public.seasons cascade;
+drop function if exists public.bump_post_counters() cascade;
+
+-- 2) SCHEMA (v2 — 22개 필드)
+
+-- =========================================================================
 -- 솔로위키 · Solo Wiki — initial schema
 -- =========================================================================
 -- Copyright-safe positioning: user-curated fan data + UGC community.

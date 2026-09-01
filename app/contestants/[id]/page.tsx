@@ -1,7 +1,7 @@
 // app/contestants/[id]/page.tsx
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Instagram, Youtube, Music2, MapPin, Briefcase, GraduationCap, Cake, Heart, Users } from "lucide-react";
+import { Instagram, Youtube, Music2, MapPin, Briefcase, GraduationCap, Cake, Heart, Users, Quote, Sparkles, Ruler, Activity, HeartHandshake, Newspaper } from "lucide-react";
 import { getContestantById } from "@/lib/data/contestants";
 import { getPostsBySeason } from "@/lib/data/posts";
 import { PortraitPlaceholder } from "@/components/contestant/PortraitPlaceholder";
@@ -10,7 +10,7 @@ import { HighlightVideo } from "@/components/contestant/HighlightVideo";
 import { PostForm } from "@/components/community/PostForm";
 import { PostCard } from "@/components/community/PostCard";
 import { currentAge, formatNumber } from "@/lib/utils";
-import { GENDER_LABELS, STATUS_LABELS } from "@/lib/types";
+import { GENDER_LABELS, STATUS_LABELS, MARITAL_LABELS } from "@/lib/types";
 
 interface PageProps {
   params: { id: string };
@@ -79,6 +79,22 @@ export default async function ContestantDetailPage({ params }: PageProps) {
                 <span className="px-2.5 py-1 rounded-md bg-ink/[0.06] text-ink-soft">
                   {STATUS_LABELS[contestant.current_status]}
                 </span>
+                {contestant.marital_history && contestant.marital_history !== "unknown" && (
+                  <span className="px-2.5 py-1 rounded-md bg-ink/[0.06] text-ink-soft">
+                    {MARITAL_LABELS[contestant.marital_history]}
+                  </span>
+                )}
+                {contestant.is_final_couple && (
+                  <span className="px-2.5 py-1 rounded-md bg-accent-rose/15 text-accent-rose border border-accent-rose/30 font-medium">
+                    <Sparkles className="w-3 h-3 inline-block mr-1 -mt-0.5" />
+                    최종 커플
+                  </span>
+                )}
+                {contestant.eliminated_episode != null && (
+                  <span className="px-2.5 py-1 rounded-md bg-ink/[0.04] text-muted">
+                    {contestant.eliminated_episode}회차 하차
+                  </span>
+                )}
               </div>
 
               <h1 className="font-serif text-[clamp(32px,5vw,48px)] font-semibold leading-tight mb-3">
@@ -91,9 +107,20 @@ export default async function ContestantDetailPage({ params }: PageProps) {
               </h1>
 
               {contestant.intro && (
-                <p className="text-ink-soft text-[15px] leading-relaxed mb-5 italic">
+                <p className="text-ink-soft text-[15px] leading-relaxed mb-3 italic">
                   "{contestant.intro}"
                 </p>
+              )}
+
+              {contestant.catchphrase && (
+                <div className="mb-5 px-4 py-3 bg-gradient-to-br from-accent-rose/8 to-accent-gold/8 border-l-2 border-accent-rose rounded-r-[10px]">
+                  <p className="text-[11px] uppercase tracking-widest text-accent-rose/80 font-medium mb-1 flex items-center gap-1.5">
+                    <Quote className="w-3 h-3" /> 시그니처 / 유행어
+                  </p>
+                  <p className="text-ink text-[14.5px] leading-relaxed font-medium">
+                    {contestant.catchphrase}
+                  </p>
+                </div>
               )}
 
               <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[14px]">
@@ -124,6 +151,21 @@ export default async function ContestantDetailPage({ params }: PageProps) {
                   <div className="flex items-center gap-2 text-ink-soft">
                     <GraduationCap className="w-4 h-4 text-muted shrink-0" />
                     <span>{contestant.education}</span>
+                  </div>
+                )}
+                {contestant.height_cm != null && (
+                  <div className="flex items-center gap-2 text-ink-soft">
+                    <Ruler className="w-4 h-4 text-muted shrink-0" />
+                    <span>{contestant.height_cm}cm</span>
+                    {contestant.body_type && (
+                      <span className="text-[11px] text-muted">· {contestant.body_type}</span>
+                    )}
+                  </div>
+                )}
+                {contestant.body_type && contestant.height_cm == null && (
+                  <div className="flex items-center gap-2 text-ink-soft">
+                    <Activity className="w-4 h-4 text-muted shrink-0" />
+                    <span>{contestant.body_type}</span>
                   </div>
                 )}
               </div>
@@ -193,6 +235,85 @@ export default async function ContestantDetailPage({ params }: PageProps) {
             </div>
           </div>
         </div>
+
+        {/* v2 field cards: 이상형 / 취미 / 결혼이력 */}
+        {(contestant.ideal_type || (contestant.hobbies && contestant.hobbies.length > 0)) && (
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+            {contestant.ideal_type && (
+              <div className="bg-bg-2 border border-line rounded-[14px] p-5">
+                <p className="text-[11px] uppercase tracking-widest text-muted font-medium mb-2.5 flex items-center gap-1.5">
+                  <HeartHandshake className="w-3.5 h-3.5 text-accent-rose" /> 이상형
+                </p>
+                <p className="text-ink text-[14.5px] leading-relaxed">
+                  {contestant.ideal_type}
+                </p>
+              </div>
+            )}
+            {contestant.hobbies && contestant.hobbies.length > 0 && (
+              <div className="bg-bg-2 border border-line rounded-[14px] p-5">
+                <p className="text-[11px] uppercase tracking-widest text-muted font-medium mb-3 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-accent-gold" /> 취미
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {contestant.hobbies.map((h) => (
+                    <span
+                      key={h}
+                      className="text-[12.5px] px-3 py-1 rounded-full bg-ink/[0.05] text-ink-soft"
+                    >
+                      # {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 최근 근황 (recent_news) — 가장 눈에 띄는 신규 필드 */}
+        {contestant.recent_news && (
+          <div className="mb-6 bg-gradient-to-br from-accent-rose/[0.06] to-accent-gold/[0.06] border border-accent-rose/20 rounded-[14px] p-6">
+            <p className="text-[11px] uppercase tracking-widest text-accent-rose/80 font-medium mb-2.5 flex items-center gap-1.5">
+              <Newspaper className="w-3.5 h-3.5" /> 최근 근황 · 후일담
+            </p>
+            <p className="text-ink text-[15px] leading-relaxed whitespace-pre-line">
+              {contestant.recent_news}
+            </p>
+            {contestant.data_source && (
+              <p className="text-[11px] text-muted mt-3">
+                출처:{" "}
+                <a
+                  href={contestant.data_source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent-rose underline underline-offset-2"
+                >
+                  {(() => {
+                    try {
+                      return new URL(contestant.data_source).hostname.replace("www.", "");
+                    } catch {
+                      return contestant.data_source;
+                    }
+                  })()}
+                </a>
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* 최종 커플 — 방송 내 매칭 결과 */}
+        {contestant.is_final_couple && contestant.final_choice && (
+          <div className="mb-6 px-5 py-4 bg-bg-2 border border-accent-rose/30 rounded-[14px] flex items-center gap-3">
+            <Heart className="w-5 h-5 text-accent-rose shrink-0" />
+            <div>
+              <p className="text-[11px] uppercase tracking-widest text-accent-rose/80 font-medium mb-0.5">
+                최종 선택
+              </p>
+              <p className="text-ink text-[15px]">
+                <span className="font-semibold">{contestant.final_choice}</span>님과 최종 매칭
+              </p>
+            </div>
+          </div>
+        )}
 
         <div className="grid lg:grid-cols-[1fr_360px] gap-6">
           {/* Main column */}

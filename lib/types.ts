@@ -12,6 +12,14 @@ export type CurrentStatus =
   | "doubly_returned"
   | "unknown";
 
+export type MaritalHistory =
+  | "never_married"
+  | "divorced"
+  | "twice_divorced"
+  | "widowed"
+  | "de_facto"
+  | "unknown";
+
 export interface Season {
   id: number;
   number: number;
@@ -42,14 +50,24 @@ export interface Contestant {
   body_type: string | null;
   education: string | null;
   intro: string | null;
+  ideal_type: string | null;
+  catchphrase: string | null;
   charm_points: string[] | null;
+  hobbies: string[] | null;
+  marital_history: MaritalHistory;
   current_status: CurrentStatus;
+  is_final_couple: boolean;
+  final_choice: string | null;
+  eliminated_episode: number | null;
   partner_id: string | null;
   instagram_handle: string | null;
   instagram_followers: number | null;
   tiktok_handle: string | null;
   tiktok_followers: number | null;
   youtube_handle: string | null;
+  recent_news: string | null;
+  data_source: string | null;
+  confidence: "high" | "medium" | "low";
   portrait_color: PortraitColor;
   appearance_order: number;
   is_published: boolean;
@@ -119,6 +137,15 @@ export const STATUS_LABELS: Record<CurrentStatus, string> = {
 export const GENDER_LABELS: Record<Gender, string> = {
   male: "남",
   female: "여",
+};
+
+export const MARITAL_LABELS: Record<MaritalHistory, string> = {
+  never_married: "미혼",
+  divorced: "이혼 (돌싱)",
+  twice_divorced: "이혼 2회 (돌돌싱)",
+  widowed: "사별",
+  de_facto: "사실혼 경험",
+  unknown: "미공개",
 };
 
 export const PORTRAIT_GRADIENT: Record<PortraitColor, string> = {

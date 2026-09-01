@@ -26,9 +26,13 @@ export function ContestantCard({ contestant }: ContestantCardProps) {
     instagram_followers,
     stats,
     season,
+    catchphrase,
+    is_final_couple,
   } = contestant;
 
   const age = currentAge(contestant.birth_date, age_at_appearance);
+  // 짧은 유행어 (40자 제한, 너무 길면 잘라 ...)
+  const shortCatch = catchphrase && catchphrase.length > 40 ? catchphrase.slice(0, 40) + "…" : catchphrase;
 
   return (
     <Link
@@ -51,17 +55,30 @@ export function ContestantCard({ contestant }: ContestantCardProps) {
               </span>
             )}
           </h3>
-          {season && (
-            <span className="text-[11px] text-muted tabular-nums">
-              {season.number}기
-            </span>
-          )}
+          <div className="flex items-center gap-1.5">
+            {is_final_couple && (
+              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-accent-rose/15 text-accent-rose border border-accent-rose/30 font-medium">
+                ♥ 커플
+              </span>
+            )}
+            {season && (
+              <span className="text-[11px] text-muted tabular-nums">
+                {season.number}기
+              </span>
+            )}
+          </div>
         </div>
 
-        <p className="text-muted text-[13px] mb-3">
+        <p className="text-muted text-[13px] mb-2">
           {job ?? "—"}
           {location_city && ` · ${location_city}${location_district ? ` ${location_district}` : ""}`}
         </p>
+
+        {shortCatch && (
+          <p className="text-ink-soft text-[12.5px] leading-snug mb-3 italic line-clamp-2">
+            "{shortCatch}"
+          </p>
+        )}
 
         {/* Compact stats — top 4 only */}
         {stats && (

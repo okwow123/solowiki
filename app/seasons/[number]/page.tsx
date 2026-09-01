@@ -1,7 +1,7 @@
 // app/seasons/[number]/page.tsx
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { MessageCircle, Filter } from "lucide-react";
+import { MessageCircle, Filter, Heart } from "lucide-react";
 import { getSeasonByNumber } from "@/lib/data/seasons";
 import { getContestantsBySeason } from "@/lib/data/contestants";
 import { ContestantCard } from "@/components/contestant/ContestantCard";
@@ -66,6 +66,18 @@ export default async function SeasonDetailPage({ params }: PageProps) {
 
   const males = contestants.filter((c) => c.gender === "male");
   const females = contestants.filter((c) => c.gender === "female");
+  const finalCouples = contestants.filter((c) => c.is_final_couple);
+  // Group into pairs: assume even number, take 0↔1, 2↔3, etc.
+  const finalCouplePairs: Array<{ m: typeof contestants[0]; f: typeof contestants[0] }> = [];
+  for (let i = 0; i < finalCouples.length; i += 2) {
+    if (i + 1 < finalCouples.length) {
+      const a = finalCouples[i];
+      const b = finalCouples[i + 1];
+      const m = a.gender === "male" ? a : b;
+      const f = a.gender === "female" ? a : b;
+      finalCouplePairs.push({ m, f });
+    }
+  }
 
   return (
     <section className="py-12">
@@ -124,6 +136,45 @@ export default async function SeasonDetailPage({ params }: PageProps) {
             </div>
           ))}
         </div>
+
+        {/* 최종 커플 하이라이트 */}
+        {finalCouplePairs.length > 0 && (
+          <div className="mb-10 bg-gradient-to-br from-accent-rose/[0.07] to-accent-gold/[0.07] border border-accent-rose/25 rounded-[14px] p-6">
+            <p className="text-[11px] uppercase tracking-widest text-accent-rose/80 font-medium mb-4 flex items-center gap-1.5">
+              <Heart className="w-3.5 h-3.5" /> {num}기 최종 커플
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {finalCouplePairs.map(({ m, f }) => (
+                <Link
+                  key={m.id + f.id}
+                  href={`/contestants/${m.id}`}
+                  className="flex items-center gap-3 p-3 bg-bg-2 border border-line rounded-[12px] hover:border-accent-rose/40 transition-colors group"
+                >
+                  <div className="flex -space-x-2">
+                    <div className="w-9 h-9 rounded-full grid place-items-center font-serif text-[12px] font-semibold text-white ring-2 ring-bg-2"
+                      style={{ background: `linear-gradient(135deg, #4b5a8a, #1d2548)` }}>
+                      {m.name_initial ?? m.name}
+                    </div>
+                    <div className="w-9 h-9 rounded-full grid place-items-center font-serif text-[12px] font-semibold text-white ring-2 ring-bg-2"
+                      style={{ background: `linear-gradient(135deg, #d96b7c, #6e2c39)` }}>
+                      {f.name_initial ?? f.name}
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[14px] font-semibold group-hover:text-accent-rose transition-colors">
+                      {m.name} <span className="text-muted font-normal">×</span> {f.name}
+                    </p>
+                    {f.recent_news && (
+                      <p className="text-[11.5px] text-muted line-clamp-1 mt-0.5">
+                        {f.recent_news}
+                      </p>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Filter (visual only for now — could be made interactive) */}
         <div className="bg-bg-2 border border-line rounded-[14px] p-5 mb-6 flex flex-wrap items-center gap-3">

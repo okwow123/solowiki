@@ -120,3 +120,25 @@ export async function getFeaturedContestants(limit = 8): Promise<ContestantWithS
     partner: null,
   }));
 }
+
+export async function getRecentNews(limit = 6): Promise<ContestantWithStats[]> {
+  // Contestants with recent_news filled — used for "최근 근황" widget on home
+  const supabase = createClient();
+  const { data, error } = await supabase
+    .from("contestants")
+    .select("*, season:seasons(*)")
+    .eq("is_published", true)
+    .not("recent_news", "is", null)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+
+  if (error || !data) return [];
+
+  return (data as any[]).map((row) => ({
+    ...(row as Contestant),
+    stats: null,
+    season: (row.season as Season) ?? null,
+    highlights: [],
+    partner: null,
+  }));
+}
