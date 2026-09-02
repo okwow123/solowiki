@@ -63,6 +63,7 @@ export default async function ContestantDetailPage({ params }: PageProps) {
                 color={contestant.portrait_color}
                 status={contestant.current_status}
                 size="xl"
+                sourceChannel={contestant.highlights?.[0]?.source_channel ?? null}
                 href={
                   contestant.highlights?.[0]?.youtube_id
                     ? `https://www.youtube.com/watch?v=${contestant.highlights[0].youtube_id}`
@@ -213,6 +214,29 @@ export default async function ContestantDetailPage({ params }: PageProps) {
                   </a>
                 )}
               </div>
+
+              {/* YouTube 출처 배지 — fan archive 정당성 */}
+              {contestant.highlights?.[0]?.youtube_id && (
+                <a
+                  href={`https://www.youtube.com/watch?v=${contestant.highlights[0].youtube_id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 flex items-center gap-2.5 px-3.5 py-2.5 bg-red-50/50 border border-red-200/60 rounded-[10px] text-[12.5px] text-ink-soft hover:bg-red-50 hover:border-red-300 transition-colors"
+                >
+                  <Youtube className="w-4 h-4 text-red-600 shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-ink font-semibold text-[12.5px]">
+                      원본 영상 보러가기 — YouTube
+                    </p>
+                    {contestant.highlights[0].source_channel && (
+                      <p className="text-muted text-[11px]">
+                        © {contestant.highlights[0].source_channel} · 클릭 시 YouTube에서 재생
+                      </p>
+                    )}
+                  </div>
+                  <span className="text-muted text-[14px]">→</span>
+                </a>
+              )}
 
               {/* Partner link */}
               {contestant.partner && (

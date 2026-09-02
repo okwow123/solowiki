@@ -138,6 +138,7 @@ export default async function HomePage() {
                     color={c.portrait_color}
                     status={c.current_status}
                     size="md"
+                    sourceChannel={c.highlights?.[0]?.source_channel ?? null}
                   />
                   <div className="p-5 pt-3">
                     <p className="text-[15px] font-semibold mb-1">

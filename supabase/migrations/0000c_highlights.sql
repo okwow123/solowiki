@@ -4481,3 +4481,6 @@ values
     '팬채널',
     0
   );
+-- 3) RLS 정책 (DROP CASCADE로 정책이 사라지므로 다시 추가)
+alter table public.highlights enable row level security;
+create policy "highlights: read" on public.highlights for select using (true);

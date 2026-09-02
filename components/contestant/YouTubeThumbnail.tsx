@@ -16,6 +16,10 @@ interface YouTubeThumbnailProps {
   className?: string;
   /** 유튜브 영상 페이지로 연결하고 싶을 때 */
   href?: string;
+  /** 출처 채널명 (예: "ENA", "SBS Plus", "팬채널") */
+  sourceChannel?: string | null;
+  /** 워터마크 표시 여부 (기본 true) */
+  showAttribution?: boolean;
 }
 
 type ImageState = "maxres" | "hq" | "fallback";
@@ -28,6 +32,8 @@ export function YouTubeThumbnail({
   size = "md",
   className,
   href,
+  sourceChannel,
+  showAttribution = true,
 }: YouTubeThumbnailProps) {
   const hasYoutube = !!youtubeId && youtubeId.length >= 6;
   // state: 현재 시도 중인 썸네일 종류
@@ -120,10 +126,24 @@ export function YouTubeThumbnail({
         </span>
       )}
 
-      {/* 유튜브 표시 — 링크일 때만 (작은 아이콘) */}
-      {href && imgState !== "fallback" && (
-        <div className="absolute bottom-2 right-2 z-[3] bg-black/70 text-white text-[10px] px-1.5 py-0.5 rounded font-medium">
-          ▶ YouTube
+      {/* 유튜브 표시 + 출처 attribution */}
+      {imgState !== "fallback" && (
+        <div className="absolute bottom-2 right-2 z-[3] flex items-center gap-1.5">
+          {showAttribution && sourceChannel && size !== "sm" && (
+            <span className="bg-black/65 backdrop-blur-sm text-white/90 text-[9.5px] font-medium px-1.5 py-0.5 rounded">
+              © {sourceChannel}
+            </span>
+          )}
+          {href && (
+            <span className="bg-red-600/90 text-white text-[10px] px-1.5 py-0.5 rounded font-semibold flex items-center gap-1">
+              <span>▶</span> YouTube
+            </span>
+          )}
+          {!href && size !== "sm" && (
+            <span className="bg-black/65 backdrop-blur-sm text-white/90 text-[9.5px] font-medium px-1.5 py-0.5 rounded">
+              YouTube
+            </span>
+          )}
         </div>
       )}
     </Wrapper>

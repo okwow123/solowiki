@@ -34,8 +34,10 @@ export function ContestantCard({ contestant }: ContestantCardProps) {
   const age = currentAge(contestant.birth_date, age_at_appearance);
   // 짧은 유행어 (40자 제한, 너무 길면 잘라 ...)
   const shortCatch = catchphrase && catchphrase.length > 40 ? catchphrase.slice(0, 40) + "…" : catchphrase;
-  // 첫 번째 highlight의 youtube_id (썸네일용)
-  const firstHighlightId = highlights?.[0]?.youtube_id ?? null;
+  // 첫 번째 highlight의 youtube_id와 source_channel (썸네일/attribution용)
+  const firstHighlight = highlights?.[0];
+  const firstHighlightId = firstHighlight?.youtube_id ?? null;
+  const sourceChannel = firstHighlight?.source_channel ?? null;
 
   return (
     <Link
@@ -48,6 +50,7 @@ export function ContestantCard({ contestant }: ContestantCardProps) {
         color={portrait_color}
         status={current_status}
         size="md"
+        sourceChannel={sourceChannel}
       />
 
       <div className="p-4">

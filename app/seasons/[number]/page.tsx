@@ -157,6 +157,7 @@ export default async function SeasonDetailPage({ params }: PageProps) {
                       nameInitial={m.name_initial ?? m.name}
                       color={m.portrait_color}
                       size="sm"
+                      showAttribution={false}
                       className="!w-9 !h-9 !rounded-full ring-2 ring-bg-2"
                     />
                     <YouTubeThumbnail
@@ -164,6 +165,7 @@ export default async function SeasonDetailPage({ params }: PageProps) {
                       nameInitial={f.name_initial ?? f.name}
                       color={f.portrait_color}
                       size="sm"
+                      showAttribution={false}
                       className="!w-9 !h-9 !rounded-full ring-2 ring-bg-2"
                     />
                   </div>
