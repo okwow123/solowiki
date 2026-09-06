@@ -34,7 +34,7 @@ const sampleContestants: ContestantWithStats[] = [
     confidence: "high",
     portrait_color: "rose", appearance_order: 1, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
-    stats: { contestant_id: "p1", charm: 82, humor: 65, warmth: 88, intelligence: 78, leadership: 92, style: 70, updated_at: "2026-01-01" },
+    stats: { contestant_id: "p1", overall_charm: 82, villain_power: 65, appearance: 78, inner_qualities: 88, career_score: 70, age_score: 50, conversation: 75, style_score: 70, intelligence_score: 78, appetite: 50, updated_at: "2026-01-01" },
     season: { id: 1, number: 1, title: "1기", air_date_start: "2021-09-19", air_date_end: "2021-12-22", episode_count: 24, description: null, is_published: true, sort_order: 0, created_at: "2026-01-01" },
     highlights: [],
     partner: { id: "p5", name: "영자", name_initial: "영자", portrait_color: "rose" },
@@ -53,7 +53,7 @@ const sampleContestants: ContestantWithStats[] = [
     confidence: "high",
     portrait_color: "navy", appearance_order: 2, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
-    stats: { contestant_id: "p2", charm: 75, humor: 60, warmth: 70, intelligence: 95, leadership: 80, style: 85, updated_at: "2026-01-01" },
+    stats: { contestant_id: "p2", overall_charm: 75, villain_power: 30, appearance: 70, inner_qualities: 70, career_score: 95, age_score: 60, conversation: 60, style_score: 85, intelligence_score: 95, appetite: 50, updated_at: "2026-01-01" },
     season: null, highlights: [],
     partner: { id: "p6", name: "영아", name_initial: "영아", portrait_color: "plum" },
   },
@@ -71,7 +71,7 @@ const sampleContestants: ContestantWithStats[] = [
     confidence: "high",
     portrait_color: "gold", appearance_order: 3, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
-    stats: { contestant_id: "p3", charm: 80, humor: 95, warmth: 85, intelligence: 70, leadership: 65, style: 88, updated_at: "2026-01-01" },
+    stats: { contestant_id: "p3", overall_charm: 80, villain_power: 25, appearance: 75, inner_qualities: 85, career_score: 65, age_score: 65, conversation: 95, style_score: 88, intelligence_score: 70, appetite: 60, updated_at: "2026-01-01" },
     season: null, highlights: [],
     partner: null,
   },
@@ -90,7 +90,7 @@ const sampleContestants: ContestantWithStats[] = [
     confidence: "high",
     portrait_color: "plum", appearance_order: 4, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
-    stats: { contestant_id: "p4", charm: 90, humor: 88, warmth: 78, intelligence: 72, leadership: 75, style: 96, updated_at: "2026-01-01" },
+    stats: { contestant_id: "p4", overall_charm: 90, villain_power: 60, appearance: 96, inner_qualities: 78, career_score: 70, age_score: 80, conversation: 88, style_score: 96, intelligence_score: 72, appetite: 50, updated_at: "2026-01-01" },
     season: null, highlights: [],
     partner: null,
   },
@@ -108,7 +108,7 @@ const sampleContestants: ContestantWithStats[] = [
     confidence: "high",
     portrait_color: "rose", appearance_order: 5, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
-    stats: { contestant_id: "p5", charm: 88, humor: 75, warmth: 90, intelligence: 78, leadership: 60, style: 92, updated_at: "2026-01-01" },
+    stats: { contestant_id: "p5", overall_charm: 88, villain_power: 20, appearance: 92, inner_qualities: 90, career_score: 80, age_score: 55, conversation: 75, style_score: 92, intelligence_score: 78, appetite: 50, updated_at: "2026-01-01" },
     season: null, highlights: [],
     partner: { id: "p1", name: "영호", name_initial: "영호", portrait_color: "rose" },
   },
@@ -126,7 +126,7 @@ const sampleContestants: ContestantWithStats[] = [
     confidence: "high",
     portrait_color: "plum", appearance_order: 6, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
-    stats: { contestant_id: "p6", charm: 82, humor: 70, warmth: 80, intelligence: 85, leadership: 88, style: 95, updated_at: "2026-01-01" },
+    stats: { contestant_id: "p6", overall_charm: 82, villain_power: 40, appearance: 90, inner_qualities: 80, career_score: 88, age_score: 60, conversation: 70, style_score: 95, intelligence_score: 85, appetite: 50, updated_at: "2026-01-01" },
     season: null, highlights: [],
     partner: { id: "p2", name: "영수", name_initial: "영수", portrait_color: "navy" },
   },
@@ -144,7 +144,7 @@ const sampleContestants: ContestantWithStats[] = [
     confidence: "high",
     portrait_color: "sage", appearance_order: 7, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
-    stats: { contestant_id: "p7", charm: 78, humor: 65, warmth: 88, intelligence: 80, leadership: 70, style: 82, updated_at: "2026-01-01" },
+    stats: { contestant_id: "p7", overall_charm: 78, villain_power: 25, appearance: 82, inner_qualities: 88, career_score: 85, age_score: 65, conversation: 65, style_score: 82, intelligence_score: 80, appetite: 70, updated_at: "2026-01-01" },
     season: null, highlights: [],
     partner: null,
   },
@@ -162,7 +162,7 @@ const sampleContestants: ContestantWithStats[] = [
     confidence: "high",
     portrait_color: "sage", appearance_order: 8, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
-    stats: { contestant_id: "p8", charm: 78, humor: 70, warmth: 92, intelligence: 85, leadership: 75, style: 65, updated_at: "2026-01-01" },
+    stats: { contestant_id: "p8", overall_charm: 78, villain_power: 20, appearance: 70, inner_qualities: 92, career_score: 95, age_score: 70, conversation: 70, style_score: 65, intelligence_score: 85, appetite: 50, updated_at: "2026-01-01" },
     season: null, highlights: [],
     partner: null,
   },
@@ -312,12 +312,12 @@ function FullCard({ contestant: c }: { contestant: ContestantWithStats }) {
         </p>
         {c.stats && (
           <div className="space-y-2.5">
-            <StatBar stat="charm" value={c.stats.charm} />
-            <StatBar stat="humor" value={c.stats.humor} />
-            <StatBar stat="warmth" value={c.stats.warmth} />
-            <StatBar stat="intelligence" value={c.stats.intelligence} />
-            <StatBar stat="leadership" value={c.stats.leadership} />
-            <StatBar stat="style" value={c.stats.style} />
+            <StatBar stat="overall_charm" value={c.stats.overall_charm} />
+            <StatBar stat="conversation" value={c.stats.conversation} />
+            <StatBar stat="inner_qualities" value={c.stats.inner_qualities} />
+            <StatBar stat="intelligence_score" value={c.stats.intelligence_score} />
+            <StatBar stat="villain_power" value={c.stats.villain_power} />
+            <StatBar stat="style_score" value={c.stats.style_score} />
           </div>
         )}
         <div className="flex flex-wrap gap-1.5 mt-4">

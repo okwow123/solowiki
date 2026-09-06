@@ -162,11 +162,11 @@ for (const s of SEASONS) {
 }
 out += contestantRows.join(",\n") + ";\n\n";
 
-// ====== 3) contestant_stats — default 50 each ======
-out += `-- ----- 3) contestant_stats (default 50 — editor adjusts later) -----
+// ====== 3) contestant_stats — default 50 each (v3 — 10 stats) ======
+out += `-- ----- 3) contestant_stats (v3 — 10 stats, default 50) -----
 -- contestant_id via (season_number, name) join
-insert into public.contestant_stats (contestant_id, charm, humor, warmth, intelligence, leadership, style)
-select c.id, 50, 50, 50, 50, 50, 50
+insert into public.contestant_stats (contestant_id, overall_charm, villain_power, appearance, inner_qualities, career_score, age_score, conversation, style_score, intelligence_score, appetite)
+select c.id, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50
 from public.contestants c
 join public.seasons s on c.season_id = s.id
 join (values

@@ -1,17 +1,32 @@
 // components/contestant/StatBar.tsx
-import type { LucideIcon } from "lucide-react";
-import { Heart, Smile, HandHeart, Brain, Crown, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
+// v3: 10개 게임 스탯 + 이모티콘
 
-export type StatKey = "charm" | "humor" | "warmth" | "intelligence" | "leadership" | "style";
+export type StatKey =
+  | "overall_charm"
+  | "villain_power"
+  | "appearance"
+  | "inner_qualities"
+  | "career_score"
+  | "age_score"
+  | "conversation"
+  | "style_score"
+  | "intelligence_score"
+  | "appetite";
 
-const STAT_META: Record<StatKey, { label: string; icon: LucideIcon; color: string }> = {
-  charm: { label: "매력", icon: Heart, color: "text-accent-rose" },
-  humor: { label: "유머", icon: Smile, color: "text-accent-gold" },
-  warmth: { label: "따뜻", icon: HandHeart, color: "text-accent-sage" },
-  intelligence: { label: "지능", icon: Brain, color: "text-accent-navy" },
-  leadership: { label: "리더", icon: Crown, color: "text-accent-plum" },
-  style: { label: "스타일", icon: Sparkles, color: "text-ink-soft" },
+export const STAT_META: Record<
+  StatKey,
+  { label: string; emoji: string; color: string }
+> = {
+  overall_charm:     { label: "종합매력", emoji: "💖", color: "text-accent-rose" },
+  villain_power:     { label: "빌런력",   emoji: "😈", color: "text-accent-plum" },
+  appearance:        { label: "외모점수", emoji: "👀", color: "text-accent-rose" },
+  inner_qualities:   { label: "내면점수", emoji: "💝", color: "text-accent-gold" },
+  career_score:      { label: "직업점수", emoji: "💼", color: "text-accent-navy" },
+  age_score:         { label: "연령점수", emoji: "⏳", color: "text-accent-sage" },
+  conversation:      { label: "대화점수", emoji: "💬", color: "text-accent-gold" },
+  style_score:       { label: "스타일점수", emoji: "👗", color: "text-accent-rose" },
+  intelligence_score:{ label: "지능점수", emoji: "🧠", color: "text-accent-navy" },
+  appetite:          { label: "식욕점수", emoji: "🍽️", color: "text-accent-gold" },
 };
 
 interface StatBarProps {
@@ -22,7 +37,6 @@ interface StatBarProps {
 
 export function StatBar({ stat, value, size = "md" }: StatBarProps) {
   const meta = STAT_META[stat];
-  const Icon = meta.icon;
   const fillPct = Math.max(0, Math.min(100, value));
 
   return (
@@ -32,17 +46,19 @@ export function StatBar({ stat, value, size = "md" }: StatBarProps) {
         size === "sm" ? "text-[12px]" : "text-[13px]"
       )}
     >
-      <Icon
+      <span
         className={cn(
-          meta.color,
-          "shrink-0",
-          size === "sm" ? "w-3.5 h-3.5" : "w-4 h-4"
+          "shrink-0 leading-none",
+          size === "sm" ? "text-[14px]" : "text-[16px]"
         )}
-      />
+        aria-hidden
+      >
+        {meta.emoji}
+      </span>
       <span
         className={cn(
           "shrink-0 font-medium text-ink-soft",
-          size === "sm" ? "w-9" : "w-11"
+          size === "sm" ? "w-12" : "w-16"
         )}
       >
         {meta.label}
@@ -70,4 +86,7 @@ export function StatBar({ stat, value, size = "md" }: StatBarProps) {
   );
 }
 
-export { STAT_META };
+// cn utility inline (avoid extra import)
+function cn(...args: (string | false | null | undefined)[]): string {
+  return args.filter(Boolean).join(" ");
+}

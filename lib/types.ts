@@ -77,12 +77,24 @@ export interface Contestant {
 
 export interface ContestantStat {
   contestant_id: string;
-  charm: number;
-  humor: number;
-  warmth: number;
-  intelligence: number;
-  leadership: number;
-  style: number;
+  // v3 — 10 stats
+  overall_charm: number;     // 종합매력
+  villain_power: number;     // 빌런력
+  appearance: number;        // 외모점수
+  inner_qualities: number;   // 내면점수
+  career_score: number;      // 직업점수
+  age_score: number;         // 연령점수
+  conversation: number;      // 대화점수
+  style_score: number;       // 스타일점수
+  intelligence_score: number;// 지능점수
+  appetite: number;          // 식욕점수
+  // v1/v2 (deprecated, but kept in DB)
+  charm?: number;
+  humor?: number;
+  warmth?: number;
+  intelligence?: number;
+  leadership?: number;
+  style?: number;
   updated_at: string;
 }
 

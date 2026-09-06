@@ -4,6 +4,8 @@ import { Cormorant_Garamond, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ChatContainer } from "@/components/chat/ChatContainer";
+import { getRecentChatMessages } from "@/lib/data/chat";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -60,17 +62,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const initialMessages = await getRecentChatMessages(50);
   return (
     <html lang="ko" className={`${cormorant.variable} ${notoKr.variable}`}>
       <body>
         <Header />
         <main className="min-h-[calc(100vh-68px)]">{children}</main>
         <Footer />
+        <ChatContainer initialMessages={initialMessages} />
       </body>
     </html>
   );

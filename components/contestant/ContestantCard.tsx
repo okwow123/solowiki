@@ -91,10 +91,10 @@ export function ContestantCard({ contestant }: ContestantCardProps) {
         {/* Compact stats — top 4 only */}
         {stats && (
           <div className="space-y-1.5 mb-3.5">
-            <StatBar stat="charm" value={stats.charm} size="sm" />
-            <StatBar stat="warmth" value={stats.warmth} size="sm" />
-            <StatBar stat="humor" value={stats.humor} size="sm" />
-            <StatBar stat="style" value={stats.style} size="sm" />
+            <StatBar stat="overall_charm" value={stats.overall_charm} size="sm" />
+            <StatBar stat="appearance" value={stats.appearance} size="sm" />
+            <StatBar stat="conversation" value={stats.conversation} size="sm" />
+            <StatBar stat="style_score" value={stats.style_score} size="sm" />
           </div>
         )}
 

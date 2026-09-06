@@ -12,7 +12,7 @@ interface YouTubeThumbnailProps {
   nameInitial: string;
   color: PortraitColor;
   status?: CurrentStatus;
-  size?: "sm" | "md" | "lg" | "xl" | "square";
+  size?: "sm" | "md" | "lg" | "xl" | "square" | "video";
   className?: string;
   /** 유튜브 영상 페이지로 연결하고 싶을 때 */
   href?: string;
@@ -20,6 +20,8 @@ interface YouTubeThumbnailProps {
   sourceChannel?: string | null;
   /** 워터마크 표시 여부 (기본 true) */
   showAttribution?: boolean;
+  /** object-fit: cover(기본, 자르고 채움) | contain(잘림 없이, 여백 가능) */
+  fit?: "cover" | "contain";
 }
 
 type ImageState = "maxres" | "hq" | "fallback";
@@ -34,6 +36,7 @@ export function YouTubeThumbnail({
   href,
   sourceChannel,
   showAttribution = true,
+  fit = "cover",
 }: YouTubeThumbnailProps) {
   const hasYoutube = !!youtubeId && youtubeId.length >= 6;
   // state: 현재 시도 중인 썸네일 종류
@@ -59,6 +62,7 @@ export function YouTubeThumbnail({
         size === "lg" && "aspect-[4/3] rounded-xl",
         size === "xl" && "aspect-[3/4] rounded-2xl",
         size === "square" && "aspect-square rounded-xl",
+        size === "video" && "aspect-video rounded-2xl",
         className
       )}
       style={
@@ -72,7 +76,10 @@ export function YouTubeThumbnail({
         <img
           src={imgState === "maxres" ? maxresUrl : hqUrl!}
           alt={`${nameInitial} YouTube 썸네일`}
-          className="absolute inset-0 w-full h-full object-cover z-[1]"
+          className={cn(
+            "absolute inset-0 w-full h-full z-[1]",
+            fit === "cover" ? "object-cover" : "object-contain bg-black/5"
+          )}
           loading="lazy"
           onError={() => {
             if (imgState === "maxres") setImgState("hq");

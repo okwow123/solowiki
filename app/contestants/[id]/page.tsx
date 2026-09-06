@@ -5,12 +5,15 @@ import { Instagram, Youtube, Music2, MapPin, Briefcase, GraduationCap, Cake, Hea
 import { getContestantById } from "@/lib/data/contestants";
 import { getPostsBySeason } from "@/lib/data/posts";
 import { YouTubeThumbnail } from "@/components/contestant/YouTubeThumbnail";
-import { StatBar, STAT_META } from "@/components/contestant/StatBar";
+import { type StatKey } from "@/components/contestant/StatBar";
+import { VoteableStatBar } from "@/components/contestant/VoteableStatBar";
 import { HighlightVideo } from "@/components/contestant/HighlightVideo";
 import { PostForm } from "@/components/community/PostForm";
 import { PostCard } from "@/components/community/PostCard";
 import { currentAge, formatNumber } from "@/lib/utils";
 import { GENDER_LABELS, STATUS_LABELS, MARITAL_LABELS } from "@/lib/types";
+import { getOrCreateVoterHash } from "@/lib/server/voter";
+import { createClient } from "@supabase/supabase-js";
 
 interface PageProps {
   params: { id: string };
@@ -30,21 +33,40 @@ export default async function ContestantDetailPage({ params }: PageProps) {
   if (!contestant) notFound();
 
   const age = currentAge(contestant.birth_date, contestant.age_at_appearance);
-  const [posts, allStats] = await Promise.all([
+  const voterHash = getOrCreateVoterHash();
+
+  const [posts, allStats, myVotesRes] = await Promise.all([
     contestant.season ? getPostsBySeason(contestant.season.id, 20) : Promise.resolve([]),
     Promise.resolve(
       contestant.stats
         ? ([
-            ["charm", contestant.stats.charm],
-            ["humor", contestant.stats.humor],
-            ["warmth", contestant.stats.warmth],
-            ["intelligence", contestant.stats.intelligence],
-            ["leadership", contestant.stats.leadership],
-            ["style", contestant.stats.style],
-          ] as [keyof typeof STAT_META, number][])
+            ["overall_charm", contestant.stats.overall_charm],
+            ["villain_power", contestant.stats.villain_power],
+            ["appearance", contestant.stats.appearance],
+            ["inner_qualities", contestant.stats.inner_qualities],
+            ["career_score", contestant.stats.career_score],
+            ["age_score", contestant.stats.age_score],
+            ["conversation", contestant.stats.conversation],
+            ["style_score", contestant.stats.style_score],
+            ["intelligence_score", contestant.stats.intelligence_score],
+            ["appetite", contestant.stats.appetite],
+          ] as [StatKey, number][])
         : []
     ),
+    // 사용자가 이 출연자의 어떤 스탯에 투표했는지
+    voterHash
+      ? createClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.SUPABASE_SERVICE_ROLE_KEY!
+        )
+          .from("stat_votes")
+          .select("stat_key")
+          .eq("contestant_id", params.id)
+          .eq("voter_hash", voterHash)
+      : Promise.resolve({ data: [], error: null }),
   ]);
+
+  const myVotedStats = new Set((myVotesRes.data || []).map((v) => v.stat_key));
 
   const filteredPosts = posts.filter(
     (p) => p.contestant?.id === contestant.id || !p.contestant_id
@@ -53,25 +75,23 @@ export default async function ContestantDetailPage({ params }: PageProps) {
   return (
     <section className="py-12">
       <div className="max-w-site mx-auto px-6">
-        {/* Hero card */}
+        {/* Hero card — image on top (16:9, no crop) + info below */}
         <div className="bg-bg-2 border border-line rounded-[14px] overflow-hidden mb-8">
-          <div className="grid md:grid-cols-[280px_1fr] gap-0">
-            <div className="p-6 md:p-8">
-              <YouTubeThumbnail
-                youtubeId={contestant.highlights?.[0]?.youtube_id ?? null}
-                nameInitial={contestant.name_initial ?? contestant.name}
-                color={contestant.portrait_color}
-                status={contestant.current_status}
-                size="xl"
-                sourceChannel={contestant.highlights?.[0]?.source_channel ?? null}
-                href={
-                  contestant.highlights?.[0]?.youtube_id
-                    ? `https://www.youtube.com/watch?v=${contestant.highlights[0].youtube_id}`
-                    : undefined
-                }
-              />
-            </div>
-            <div className="p-6 md:p-8 md:pl-0">
+          <YouTubeThumbnail
+            youtubeId={contestant.highlights?.[0]?.youtube_id ?? null}
+            nameInitial={contestant.name_initial ?? contestant.name}
+            color={contestant.portrait_color}
+            status={contestant.current_status}
+            size="video"
+            sourceChannel={contestant.highlights?.[0]?.source_channel ?? null}
+            href={
+              contestant.highlights?.[0]?.youtube_id
+                ? `https://www.youtube.com/watch?v=${contestant.highlights[0].youtube_id}`
+                : undefined
+            }
+            className="rounded-none border-b border-line"
+          />
+          <div className="p-6 md:p-8">
               <div className="flex flex-wrap items-center gap-2 mb-3 text-[12px] text-muted">
                 {contestant.season && (
                   <Link
@@ -264,7 +284,6 @@ export default async function ContestantDetailPage({ params }: PageProps) {
                 </div>
               )}
             </div>
-          </div>
         </div>
 
         {/* v2 field cards: 이상형 / 취미 / 결혼이력 */}
@@ -349,15 +368,24 @@ export default async function ContestantDetailPage({ params }: PageProps) {
         <div className="grid lg:grid-cols-[1fr_360px] gap-6">
           {/* Main column */}
           <div className="space-y-6">
-            {/* Game stats */}
+            {/* Game stats — 투표 가능 */}
             {contestant.stats && (
               <div className="bg-bg-2 border border-line rounded-[14px] p-6">
-                <h2 className="font-serif text-[22px] font-semibold mb-5 flex items-center gap-2">
+                <h2 className="font-serif text-[22px] font-semibold mb-2 flex items-center gap-2">
                   <span className="text-accent-rose">◆</span> 게임 스탯
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+                <p className="text-[11.5px] text-muted mb-5">
+                  ±1로 투표할 수 있어요. 같은 스탯은 1회만 가능. (쿠키 삭제 시 재투표)
+                </p>
+                <div className="grid sm:grid-cols-1 gap-y-3">
                   {allStats.map(([key, value]) => (
-                    <StatBar key={key} stat={key} value={value} />
+                    <VoteableStatBar
+                      key={key}
+                      contestantId={contestant.id}
+                      stat={key}
+                      value={value}
+                      alreadyVoted={myVotedStats.has(key)}
+                    />
                   ))}
                 </div>
                 {contestant.charm_points && contestant.charm_points.length > 0 && (
