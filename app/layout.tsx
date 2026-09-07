@@ -22,21 +22,26 @@ const notoKr = Noto_Sans_KR({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "솔로위키";
+const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "르헤메스";
+const SITE_TAGLINE = process.env.NEXT_PUBLIC_SITE_TAGLINE ?? "캐릭터 백과사전";
+const SITE_ENG = process.env.NEXT_PUBLIC_SITE_ENG ?? "Lexemes";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} · 솔로 데이팅 출연자 아카이브`,
+    default: `${SITE_NAME} · ${SITE_TAGLINE}`,
     template: `%s · ${SITE_NAME}`,
   },
   description:
-    "솔로 데이팅 프로그램 1기~33기 출연자 정보, 커플 현황, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티. 로그인 없이 자유롭게.",
+    "영화, 드라마, 예능의 캐릭터들을 한 곳에 모았습니다. 출연자 도감, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티. 로그인 없이 자유롭게.",
   keywords: [
+    "르헤메스",
+    "Lexemes",
+    "캐릭터 백과사전",
+    "영화",
+    "드라마",
+    "예능",
     "나는솔로",
-    "솔로위키",
-    "솔로 데이팅",
-    "출연자",
     "커플",
     "팬 커뮤니티",
   ],
@@ -46,15 +51,15 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} · 솔로 데이팅 출연자 아카이브`,
+    title: `${SITE_NAME} · ${SITE_TAGLINE}`,
     description:
-      "솔로 데이팅 프로그램 1기~33기 출연자 정보, 커플 현황, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티.",
+      "영화, 드라마, 예능의 캐릭터들을 한 곳에. 출연자 도감, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} · 솔로 데이팅 출연자 아카이브`,
+    title: `${SITE_NAME} · ${SITE_TAGLINE}`,
     description:
-      "솔로 데이팅 프로그램 1기~33기 출연자 정보, 커플 현황, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티.",
+      "영화, 드라마, 예능의 캐릭터들을 한 곳에. 출연자 도감, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티.",
   },
   robots: {
     index: true,

@@ -95,7 +95,7 @@ export default async function ContestantDetailPage({ params }: PageProps) {
               <div className="flex flex-wrap items-center gap-2 mb-3 text-[12px] text-muted">
                 {contestant.season && (
                   <Link
-                    href={`/seasons/${contestant.season.number}`}
+                    href={`/works/${contestant.season.number}`}
                     className="px-2.5 py-1 rounded-md bg-ink/[0.06] text-ink-soft hover:text-ink transition-colors"
                   >
                     {contestant.season.number}기

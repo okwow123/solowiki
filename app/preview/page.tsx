@@ -35,7 +35,7 @@ const sampleContestants: ContestantWithStats[] = [
     portrait_color: "rose", appearance_order: 1, is_published: true,
     created_at: "2026-01-01", updated_at: "2026-01-01",
     stats: { contestant_id: "p1", overall_charm: 82, villain_power: 65, appearance: 78, inner_qualities: 88, career_score: 70, age_score: 50, conversation: 75, style_score: 70, intelligence_score: 78, appetite: 50, updated_at: "2026-01-01" },
-    season: { id: 1, number: 1, title: "1기", air_date_start: "2021-09-19", air_date_end: "2021-12-22", episode_count: 24, description: null, is_published: true, sort_order: 0, created_at: "2026-01-01" },
+    season: { id: 1, number: 1, title: "1기", franchise: "나는솔로", kind: "variety" as const, air_date_start: "2021-09-19", air_date_end: "2021-12-22", episode_count: 24, description: null, is_published: true, sort_order: 0, created_at: "2026-01-01" },
     highlights: [],
     partner: { id: "p5", name: "영자", name_initial: "영자", portrait_color: "rose" },
   },
@@ -175,7 +175,7 @@ const samplePosts: PostWithRefs[] = [
     anonymous_name: "달빛한입", vote_up_count: 24, vote_down_count: 1, report_count: 0,
     is_hidden: false,
     created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString(),
-    season: { id: 1, number: 1, title: "1기" },
+    season: { id: 1, number: 1, title: "1기", kind: "variety" as const },
     contestant: { id: "p1", name: "영호", name_initial: "영호", portrait_color: "rose" },
   },
   {
@@ -184,7 +184,7 @@ const samplePosts: PostWithRefs[] = [
     anonymous_name: "솔로관찰자", vote_up_count: 18, vote_down_count: 0, report_count: 0,
     is_hidden: false,
     created_at: new Date(Date.now() - 1000 * 60 * 14).toISOString(),
-    season: { id: 1, number: 1, title: "1기" },
+    season: { id: 1, number: 1, title: "1기", kind: "variety" as const },
     contestant: null,
   },
   {
@@ -193,13 +193,13 @@ const samplePosts: PostWithRefs[] = [
     anonymous_name: "밤의독자", vote_up_count: 31, vote_down_count: 2, report_count: 0,
     is_hidden: false,
     created_at: new Date(Date.now() - 1000 * 60 * 60).toISOString(),
-    season: { id: 1, number: 1, title: "1기" },
+    season: { id: 1, number: 1, title: "1기", kind: "variety" as const },
     contestant: { id: "p4", name: "영경", name_initial: "영경", portrait_color: "plum" },
   },
 ];
 
 const sampleSeasons = Array.from({ length: 33 }, (_, i) => ({
-  id: i + 1, number: i + 1, title: `${i + 1}기`, is_published: true, sort_order: i,
+  id: i + 1, number: i + 1, title: `${i + 1}기`, kind: "variety" as const, is_published: true, sort_order: i,
   air_date_start: null, air_date_end: null, episode_count: null, description: null,
   created_at: "2026-01-01",
 }));

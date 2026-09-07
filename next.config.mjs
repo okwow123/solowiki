@@ -11,6 +11,13 @@ const nextConfig = {
   experimental: {
     typedRoutes: false,
   },
+  // 르헤메스 리브랜드: /seasons → /works 영구 리다이렉트
+  async redirects() {
+    return [
+      { source: "/seasons", destination: "/works", permanent: true },
+      { source: "/seasons/:number", destination: "/works/:number", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

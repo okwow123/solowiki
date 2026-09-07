@@ -14,12 +14,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const staticPages: MetadataRoute.Sitemap = [
     { url: `${base}/`, lastModified: now, changeFrequency: "daily", priority: 1 },
-    { url: `${base}/seasons`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/works`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/search`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   const seasonPages = (seasonsRes.data ?? []).map((s) => ({
-    url: `${base}/seasons/${s.number}`,
+    url: `${base}/works/${s.number}`,
     lastModified: new Date(s.updated_at ?? now),
     changeFrequency: "weekly" as const,
     priority: 0.7,

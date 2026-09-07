@@ -8,6 +8,7 @@ export type CurrentStatus =
   | "dating"
   | "married"
   | "divorced"
+  | "widowed"
   | "returned"
   | "doubly_returned"
   | "unknown";
@@ -20,10 +21,22 @@ export type MaritalHistory =
   | "de_facto"
   | "unknown";
 
+export type WorkKind = "variety" | "movie" | "drama" | "anime" | "other";
+
+export const WORK_KIND_LABELS: Record<WorkKind, string> = {
+  variety: "예능",
+  movie: "영화",
+  drama: "드라마",
+  anime: "애니",
+  other: "기타",
+};
+
 export interface Season {
   id: number;
   number: number;
   title: string | null;
+  franchise: string | null; // 프랜차이즈명 (예: "나는솔로"). NULL이면 단독 작품.
+  kind: WorkKind;
   air_date_start: string | null;
   air_date_end: string | null;
   episode_count: number | null;
@@ -31,6 +44,14 @@ export interface Season {
   is_published: boolean;
   sort_order: number;
   created_at: string;
+}
+
+/** 프랜차이즈 단위로 묶인 작품 그룹 (예: 나는솔로 1~33기) */
+export interface Franchise {
+  name: string;
+  kind: WorkKind;
+  seasons: Season[];
+  totalCharacters: number;
 }
 
 export interface Contestant {
@@ -131,7 +152,7 @@ export interface ContestantWithStats extends Contestant {
 }
 
 export interface PostWithRefs extends Post {
-  season: Pick<Season, "id" | "number" | "title"> | null;
+  season: Pick<Season, "id" | "number" | "title" | "kind"> | null;
   contestant: Pick<Contestant, "id" | "name" | "name_initial" | "portrait_color"> | null;
 }
 
@@ -141,6 +162,7 @@ export const STATUS_LABELS: Record<CurrentStatus, string> = {
   dating: "연애중",
   married: "결혼",
   divorced: "이혼",
+  widowed: "사별",
   returned: "돌싱",
   doubly_returned: "돌돌싱",
   unknown: "미공개",

@@ -1,4 +1,5 @@
-// app/seasons/[number]/page.tsx
+// app/works/[number]/page.tsx
+// 단일 작품 상세 (시즌 or 영화/드라마/애니)
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MessageCircle, Filter, Heart } from "lucide-react";
@@ -12,36 +13,39 @@ interface PageProps {
   params: { number: string };
 }
 
+const KIND_BADGE: Record<string, { label: string; color: string }> = {
+  variety: { label: "예능", color: "bg-accent-rose/10 text-accent-rose" },
+  movie: { label: "영화", color: "bg-accent-gold/10 text-accent-gold" },
+  drama: { label: "드라마", color: "bg-accent-navy/10 text-accent-navy" },
+  anime: { label: "애니", color: "bg-accent-sage/10 text-accent-sage" },
+  other: { label: "기타", color: "bg-ink/[0.06] text-ink-soft" },
+};
+
 export async function generateMetadata({ params }: PageProps) {
   const num = parseInt(params.number, 10);
-  if (isNaN(num)) return { title: "기수" };
+  if (isNaN(num)) return { title: "작품" };
   return {
     title: `${num}기 출연자`,
-    description: `솔로 데이팅 ${num}기 출연자 정보, 커플 현황, 게임 스탯.`,
+    description: `${num}기 출연자 정보, 커플 현황, 게임 스탯.`,
   };
 }
 
-export default async function SeasonDetailPage({ params }: PageProps) {
+export default async function WorkDetailPage({ params }: PageProps) {
   const num = parseInt(params.number, 10);
   if (isNaN(num)) notFound();
 
-  const [season, contestants] = await Promise.all([
-    getSeasonByNumber(num),
-    // Get the season first to find its id, then contestants
-    Promise.resolve(null).then(async () => {
-      const s = await getSeasonByNumber(num);
-      if (!s) return [];
-      return getContestantsBySeason(s.id);
-    }),
-  ]);
+  const season = await getSeasonByNumber(num);
+  const contestants = season
+    ? await getContestantsBySeason(season.id)
+    : [];
 
   if (!season) {
-    // Fallback for legacy seasons without data — show "데이터 준비 중"
+    // Fallback for legacy seasons without data
     return (
       <section className="py-16">
         <div className="max-w-site mx-auto px-6">
           <div className="mb-10">
-            <p className="text-muted text-[13px] tracking-widest mb-2">SEASON</p>
+            <p className="text-muted text-[13px] tracking-widest mb-2">VARIETY · 솔로 데이팅</p>
             <h1 className="font-serif text-[clamp(40px,6vw,64px)] font-semibold">
               {num}기
             </h1>
@@ -54,10 +58,10 @@ export default async function SeasonDetailPage({ params }: PageProps) {
               곧 채워질 예정! 다른 기수는 아래에서 골라보세요.
             </p>
             <Link
-              href="/seasons"
+              href="/works"
               className="inline-block mt-6 text-[13px] text-accent-rose hover:underline"
             >
-              전체 기수 보기 →
+              전체 작품 보기 →
             </Link>
           </div>
         </div>
@@ -68,7 +72,6 @@ export default async function SeasonDetailPage({ params }: PageProps) {
   const males = contestants.filter((c) => c.gender === "male");
   const females = contestants.filter((c) => c.gender === "female");
   const finalCouples = contestants.filter((c) => c.is_final_couple);
-  // Group into pairs: assume even number, take 0↔1, 2↔3, etc.
   const finalCouplePairs: Array<{ m: typeof contestants[0]; f: typeof contestants[0] }> = [];
   for (let i = 0; i < finalCouples.length; i += 2) {
     if (i + 1 < finalCouples.length) {
@@ -80,15 +83,41 @@ export default async function SeasonDetailPage({ params }: PageProps) {
     }
   }
 
+  const kindBadge = KIND_BADGE[season.kind] ?? KIND_BADGE.other;
+  const isVariety = season.kind === "variety";
+
   return (
     <section className="py-12">
       <div className="max-w-site mx-auto px-6">
+        {/* Breadcrumb */}
+        <div className="mb-4 text-[12px] text-muted flex items-center gap-2">
+          <Link href="/works" className="hover:text-ink">작품 도감</Link>
+          <span>/</span>
+          {isVariety && season.franchise && (
+            <>
+              <Link
+                href={`/works?kind=variety`}
+                className="hover:text-ink"
+              >
+                {season.franchise}
+              </Link>
+              <span>/</span>
+            </>
+          )}
+          <span className="text-ink-soft">{season.title ?? `${num}기`}</span>
+        </div>
+
         {/* Header */}
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-muted text-[13px] tracking-widest mb-2">SEASON</p>
+            <p className="text-muted text-[13px] tracking-widest mb-2 flex items-center gap-2">
+              {isVariety ? "VARIETY" : season.kind === "movie" ? "MOVIE" : season.kind === "drama" ? "DRAMA" : season.kind === "anime" ? "ANIME" : "WORK"}
+              <span className={cn("px-2 py-0.5 rounded-full text-[10.5px] font-medium", kindBadge.color)}>
+                {kindBadge.label}
+              </span>
+            </p>
             <h1 className="font-serif text-[clamp(40px,6vw,64px)] font-semibold">
-              {num}기
+              {season.title ?? (isVariety ? `${num}기` : "")}
             </h1>
             {season.description && (
               <p className="text-ink-soft text-[14.5px] mt-3 max-w-2xl">
@@ -97,26 +126,29 @@ export default async function SeasonDetailPage({ params }: PageProps) {
             )}
             {season.air_date_start && (
               <p className="text-muted text-[12.5px] mt-2">
-                {season.air_date_start} ~ {season.air_date_end ?? "방영 중"}
-                {season.episode_count && ` · ${season.episode_count}부작`}
+                {season.air_date_start}
+                {season.air_date_end && season.air_date_end !== season.air_date_start && ` ~ ${season.air_date_end}`}
+                {season.episode_count && season.episode_count > 1 && ` · ${season.episode_count}부작`}
               </p>
             )}
           </div>
-          <div className="flex gap-2">
-            <Link
-              href={`/community/${num}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-line-strong text-ink rounded-full hover:bg-bg-3 text-[14px]"
-            >
-              <MessageCircle className="w-4 h-4" />
-              {num}기 커뮤니티
-            </Link>
-          </div>
+          {isVariety && (
+            <div className="flex gap-2">
+              <Link
+                href={`/community/${num}`}
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-line-strong text-ink rounded-full hover:bg-bg-3 text-[14px]"
+              >
+                <MessageCircle className="w-4 h-4" />
+                {num}기 커뮤니티
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Stats summary */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
           {[
-            { label: "총 출연자", value: contestants.length },
+            { label: "총 캐릭터", value: contestants.length },
             { label: "남성", value: males.length },
             { label: "여성", value: females.length },
             {
@@ -138,8 +170,8 @@ export default async function SeasonDetailPage({ params }: PageProps) {
           ))}
         </div>
 
-        {/* 최종 커플 하이라이트 */}
-        {finalCouplePairs.length > 0 && (
+        {/* 최종 커플 (예능 한정) */}
+        {isVariety && finalCouplePairs.length > 0 && (
           <div className="mb-10 bg-gradient-to-br from-accent-rose/[0.07] to-accent-gold/[0.07] border border-accent-rose/25 rounded-[14px] p-6">
             <p className="text-[11px] uppercase tracking-widest text-accent-rose/80 font-medium mb-4 flex items-center gap-1.5">
               <Heart className="w-3.5 h-3.5" /> {num}기 최종 커플
@@ -185,7 +217,7 @@ export default async function SeasonDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Filter (visual only for now — could be made interactive) */}
+        {/* Filter (visual only) */}
         <div className="bg-bg-2 border border-line rounded-[14px] p-5 mb-6 flex flex-wrap items-center gap-3">
           <Filter className="w-4 h-4 text-muted" />
           <span className="text-[12px] text-muted uppercase tracking-widest">필터</span>
@@ -194,7 +226,16 @@ export default async function SeasonDetailPage({ params }: PageProps) {
               { label: "전체", active: true },
               { label: "남성", count: males.length },
               { label: "여성", count: females.length },
-              { label: "결혼/연애", count: contestants.filter((c) => c.current_status === "married" || c.current_status === "dating").length },
+              ...(isVariety
+                ? [
+                    {
+                      label: "결혼/연애",
+                      count: contestants.filter(
+                        (c) => c.current_status === "married" || c.current_status === "dating"
+                      ).length,
+                    },
+                  ]
+                : []),
             ].map((chip) => (
               <button
                 key={chip.label}
@@ -244,7 +285,7 @@ export default async function SeasonDetailPage({ params }: PageProps) {
           </div>
         ) : (
           <div className="py-16 text-center border border-dashed border-line-strong rounded-[14px]">
-            <p className="text-ink-soft">이 기수에는 아직 등록된 출연자가 없어요.</p>
+            <p className="text-ink-soft">이 작품에는 아직 등록된 캐릭터가 없어요.</p>
           </div>
         )}
       </div>

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (isNaN(num)) return { title: "커뮤니티" };
   return {
     title: `${num}기 커뮤니티`,
-    description: `솔로 데이팅 ${num}기 팬들이 나누는 익명 이야기.`,
+    description: `${num}기 팬들이 나누는 익명 이야기.`,
   };
 }
 
@@ -33,7 +33,7 @@ export default async function CommunityPage({ params }: PageProps) {
       <section className="py-16">
         <div className="max-w-site mx-auto px-6 text-center py-20 border border-dashed border-line-strong rounded-[14px]">
           <p className="text-ink-soft mb-2">{num}기는 아직 데이터가 없어요.</p>
-          <p className="text-muted text-[13px]">다른 기수 커뮤니티를 구경해보세요.</p>
+          <p className="text-muted text-[13px]">다른 시즌 커뮤니티를 구경해보세요.</p>
         </div>
       </section>
     );
