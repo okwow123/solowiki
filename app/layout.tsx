@@ -44,11 +44,20 @@ export const metadata: Metadata = {
     "영화",
     "드라마",
     "예능",
+    "애니",
     "나는솔로",
     "커플",
     "팬 커뮤니티",
   ],
   authors: [{ name: SITE_NAME }],
+  // canonical: 중복 콘텐츠 방지용 정규 URL. Google이 이걸 우선 색인.
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      "ko-KR": SITE_URL,
+      "x-default": SITE_URL,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "ko_KR",
@@ -67,6 +76,21 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    // Google Search Console 인증 (사이트에 등록한 meta tag의 content 값)
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? undefined,
+    // Naver Search Advisor 인증
+    other: process.env.NEXT_PUBLIC_NAVER_VERIFICATION
+      ? { "naver-site-verification": process.env.NEXT_PUBLIC_NAVER_VERIFICATION }
+      : undefined,
   },
 };
 
@@ -79,6 +103,45 @@ export default async function RootLayout({
   return (
     <html lang="ko" className={`${cormorant.variable} ${notoKr.variable}`}>
       <body>
+        {/* JSON-LD: Organization + WebSite 스키마 (Google 검색 결과 리치 스니펫) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "@id": `${SITE_URL}#organization`,
+                name: SITE_NAME,
+                alternateName: SITE_ENG,
+                url: SITE_URL,
+                logo: `${SITE_URL}/icon.png`,
+                description:
+                  "영화, 드라마, 예능의 캐릭터들을 한 곳에 모은 백과사전",
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": `${SITE_URL}#website`,
+                url: SITE_URL,
+                name: SITE_NAME,
+                alternateName: SITE_ENG,
+                inLanguage: "ko-KR",
+                description:
+                  "영화 · 드라마 · 예능의 모든 캐릭터를 한 곳에서. 출연자 도감, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티.",
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: {
+                    "@type": "EntryPoint",
+                    urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+                  },
+                  "query-input": "required name=search_term_string",
+                },
+                publisher: { "@id": `${SITE_URL}#organization` },
+              },
+            ]),
+          }}
+        />
         <Header />
         <main className="min-h-[calc(100vh-68px)]">{children}</main>
         <Footer />
