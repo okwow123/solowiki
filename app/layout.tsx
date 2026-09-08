@@ -22,10 +22,12 @@ const notoKr = Noto_Sans_KR({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lehemes.app";
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "르헤메스";
 const SITE_TAGLINE = process.env.NEXT_PUBLIC_SITE_TAGLINE ?? "캐릭터 백과사전";
-const SITE_ENG = process.env.NEXT_PUBLIC_SITE_ENG ?? "Lexemes";
+const SITE_ENG = process.env.NEXT_PUBLIC_SITE_ENG ?? "lehemes";
+// og:site_name 등 국제 메타에는 영문 브랜드(lehemes) 사용
+const SITE_OG_NAME = process.env.NEXT_PUBLIC_SITE_OG_NAME ?? SITE_ENG;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     "영화, 드라마, 예능의 캐릭터들을 한 곳에 모았습니다. 출연자 도감, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티. 로그인 없이 자유롭게.",
   keywords: [
     "르헤메스",
-    "Lexemes",
+    "lehemes",
     "캐릭터 백과사전",
     "영화",
     "드라마",
@@ -51,14 +53,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: SITE_URL,
-    siteName: SITE_NAME,
-    title: `${SITE_NAME} · ${SITE_TAGLINE}`,
+    siteName: SITE_OG_NAME,
+    title: `${SITE_OG_NAME} · ${SITE_TAGLINE}`,
     description:
       "영화, 드라마, 예능의 캐릭터들을 한 곳에. 출연자 도감, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} · ${SITE_TAGLINE}`,
+    title: `${SITE_OG_NAME} · ${SITE_TAGLINE}`,
     description:
       "영화, 드라마, 예능의 캐릭터들을 한 곳에. 출연자 도감, 게임 스탯, 하이라이트 영상, 익명 팬 커뮤니티.",
   },

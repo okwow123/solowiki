@@ -21,7 +21,7 @@ export function Footer() {
               </span>
               <span className="font-semibold text-[18px]">
                 르헤메스{" "}
-                <em className="font-serif italic font-medium text-ink-soft text-sm ml-1.5">Lexemes</em>
+                <em className="font-serif italic font-medium text-ink-soft text-sm ml-1.5">lehemes</em>
               </span>
             </div>
             <p className="text-muted text-[13px] mt-2">
@@ -29,7 +29,7 @@ export function Footer() {
             </p>
           </div>
           <div className="text-[13px] text-right">
-            <p>© 2026 르헤메스 · Lexemes</p>
+            <p>© 2026 르헤메스 · lehemes</p>
             <p className="text-muted mt-1">
               팬 큐레이션 정보 · UGC 기반 · {""}
               <Link href="/legal" className="hover:text-ink-soft transition-colors underline underline-offset-2">

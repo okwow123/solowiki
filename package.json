@@ -1,8 +1,8 @@
 {
-  "name": "solowiki",
+  "name": "lehemes",
   "version": "0.1.0",
   "private": true,
-  "description": "솔로 데이팅 프로그램 출연자 아카이브 · 익명 팬 커뮤니티",
+  "description": "르헤메스 · lehemes — 영화/드라마/예능 캐릭터 백과사전 · 익명 팬 커뮤니티",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

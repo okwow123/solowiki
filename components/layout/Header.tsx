@@ -24,7 +24,7 @@ export function Header() {
           <span className="font-semibold text-[18px] tracking-wide whitespace-nowrap">
             르헤메스{" "}
             <em className="font-serif italic font-medium text-ink-soft text-sm ml-1.5">
-              Lexemes
+              lehemes
             </em>
           </span>
         </Link>
