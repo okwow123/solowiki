@@ -1,5 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Cormorant_Garamond, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -80,6 +81,7 @@ export default async function RootLayout({
         <main className="min-h-[calc(100vh-68px)]">{children}</main>
         <Footer />
         <ChatContainer initialMessages={initialMessages} />
+        <Analytics />
       </body>
     </html>
   );
