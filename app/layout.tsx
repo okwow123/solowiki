@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatContainer } from "@/components/chat/ChatContainer";
 import { getRecentChatMessages } from "@/lib/data/chat";
+import { Analytics } from "@vercel/analytics/next";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -80,6 +81,7 @@ export default async function RootLayout({
         <main className="min-h-[calc(100vh-68px)]">{children}</main>
         <Footer />
         <ChatContainer initialMessages={initialMessages} />
+        <Analytics />
       </body>
     </html>
   );
